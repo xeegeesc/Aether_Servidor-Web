@@ -6,14 +6,22 @@ include './LogicaDelNegocio.php';
 $metodo = $_SERVER['REQUEST_METHOD'];
 
 //comprobamos si el metodo es POST o GET
-if($metodo=='POST'){ 
+if($metodo=='POST'){
 
-//Cogemos las variables y luego llamamos a guardarMedicion para insertar en la tabla
-    $instante = $_POST["instante"];
-    $idSensor = $_POST["idSensor"];
-    $valor = $_POST["valor"];
+    //Comprobamos los parámetros de entrada del POST para diferenciar qué se quiere insertar en la BBDD
+    if(isset($_POST["instante"])&&isset($_POST["idSensor"])){
+        //Cogemos las variables y luego llamamos a guardarMedicion para insertar en la tabla
+        $instante = $_POST["instante"];
+        $idSensor = $_POST["idSensor"];
+        $valor = $_POST["valor"];
 
-    guardarMedicion($instante,$idSensor,$valor);
+        guardarMedicion($instante,$idSensor,$valor);
+    }elseif (isset($_POST["nombre"])&&isset($_POST["correo"])&&isset($_POST["contrasenya"])){
+        $nombre=$_POST["nombre"];
+        $correo=$_POST["correo"];
+        $contrasenya=$_POST["contrasenya"];
+        registrarUsuario($nombre, $correo, $contrasenya);
+    }
 
 }else if($metodo=='GET'){
 

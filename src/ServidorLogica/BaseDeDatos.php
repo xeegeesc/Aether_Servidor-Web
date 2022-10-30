@@ -58,6 +58,29 @@ function obtenerUltimaMedicionBBDD(){
     return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
 
+//------------------------------------------------------------------------------------------
+/*
+ * registrarUsuarioBBDD() es una función que crea un usuario en la BBDD guardando el nombre, el correo y su contraseña.
+ * La funcion comprueba que no existan ya ese correo y contraseña en la BBDD.
+ *
+ * @param nombre nombre de la persona que se va a registrar.
+ * @param correo email perteneciente al usuario que se va a registrar.
+ * @param contrasenya la contraseña que estará asociada a la cuenta del usuario.
+ *
+ * @returns Devuelve true si el registro se ha podido realizar, si no se ha podido realizar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function registrarUsuarioBBDD($nombre,$correo,$contrasenya){
+    $sql = "INSERT INTO `usuario` (`nombre`, `correo`, `contrasenya`) VALUES ('$nombre', '$correo', '$contrasenya')";
+    if (mysqli_query(Conectar(), $sql)) {
+
+        return true;
+
+    } else {
+        return false;
+    }
+}//registrarUsuarioBBDD
 
 //------------------------------------------------------------------------------------------
 /*

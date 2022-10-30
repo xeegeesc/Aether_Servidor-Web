@@ -27,6 +27,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/test",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -49,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
-      <workItem from="1667151876739" duration="28000" />
+      <workItem from="1667151876739" duration="341000" />
     </task>
     <servers />
   </component>

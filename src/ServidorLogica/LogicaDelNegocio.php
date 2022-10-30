@@ -87,6 +87,37 @@ function obtenerUltimaMedicion()
     echo json_encode($resultado);
 
 }//obtenerUltimaMedicion
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * registrarUsuario() es una función que crea un usuario en la BBDD guardando el nombre, el correo y su contraseña.
+ * La funcion comprueba que no existan ya ese correo y contraseña en la BBDD.
+ *
+ * @param nombre nombre de la persona que se va a registrar.
+ * @param correo email perteneciente al usuario que se va a registrar.
+ * @param contrasenya la contraseña que estará asociada a la cuenta del usuario.
+ *
+ * @returns Devuelve true si el registro se ha podido realizar, si no se ha podido realizar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function registrarUsuario($nombre, $correo, $contrasenya)
+{
+    if (!comprobarCredenciales($correo, $contrasenya)) {
+        //llamamos a la funcion previamente creada para guardar las mediciones
+        if (registrarUsuarioBBDD($nombre, $correo, $contrasenya)) {
+            //echo "Usuario Guardado";
+            return true;
+        }
+    } else {
+        http_response_code(401);
+        return false;
+    }
+
+}//registrarUsuario()
+
+
 //------------------------------------------------------------------------------------------
 /*
  * comprobarCredenciales() es una función que comprueba que existan esa combinacion de correo y contraseña en la BBDD.
