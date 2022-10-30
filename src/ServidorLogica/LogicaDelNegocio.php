@@ -1,5 +1,5 @@
 <?php
-include './BaseDeDatos.php';
+include 'BaseDeDatos.php';
 //------------------------------------------------------------------------------------------
 /*
  * guardarMedición() es una función que guarda los valores de una medición realizada en la BBDD.

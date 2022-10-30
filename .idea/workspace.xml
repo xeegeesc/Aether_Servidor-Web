@@ -26,12 +26,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/test",
+    "last_opened_file_path": "C:/php/phpunit-9.5.26 (1).phar",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales">
+    <configuration name="LogicaDelNegocioTest.testComprobarCredenciales" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1.12" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testComprobarCredenciales" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -41,6 +50,15 @@
       <TestRunner coverage_engine="PHPDBG" directory="$PROJECT_DIR$/test" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
-      <workItem from="1667151876739" duration="341000" />
+      <workItem from="1667151876739" duration="520000" />
     </task>
     <servers />
   </component>

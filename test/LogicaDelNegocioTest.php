@@ -4,7 +4,7 @@ namespace Test;
 
 use PHPUnit\Framework\TestCase;
 
-include("src/ServidorLogica/LogicaDelNegocio.php");
+include("../src/ServidorLogica/LogicaDelNegocio.php");
 
 final class LogicaDelNegocioTest extends TestCase
 {
@@ -26,7 +26,7 @@ final class LogicaDelNegocioTest extends TestCase
         $this->assertEquals(false, comprobarCredenciales("prueb@gmail.com", "Prueba"), "El correo y contraseña existen en BBDD");
     }
 
-    
+
 
 //------------------------------------------------------------------------------------------
 /*
