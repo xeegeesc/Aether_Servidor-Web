@@ -12,10 +12,10 @@ include 'ConexionABBDD.php';
  * @returns Devuelve true si se ha podido llevar a cabo la query, sino devolverá false.
  */
 //------------------------------------------------------------------------------------------
-function GuardarMedicionBBDD($instante, $idSensor, $valor)
+function GuardarMedicionBBDD($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud)
 {
     //Insertamos en la bbdd y comrpbamos si se guarda
-    $sql = "INSERT INTO `medida` (`instante`, `idSensor`, `valor`) VALUES ('$instante', '$idSensor', '$valor')";
+    $sql = "INSERT INTO `medida` (`idSensor`, `valorMedicion`, `momentoMedicion`, `latitud`, `longitud`) VALUES ('$idSensor', '$valorMedicion', '$momentoMedicion', '$latitud', '$longitud')";
     if (mysqli_query(Conectar(), $sql)) {
 
         return true;
@@ -54,7 +54,7 @@ function obtenerMedicionesBBDD(){
 //------------------------------------------------------------------------------------------
 function obtenerUltimaMedicionBBDD(){
     //obtenemos solo el ultimo valor de la tabla para ver el ultimo
-    $sql = "SELECT * FROM `medida` WHERE `instante` = (SELECT MAX(`instante`) FROM `medida`)";
+    $sql = "SELECT * FROM `medida` WHERE `momentoMedicion` = (SELECT MAX(`instante`) FROM `medida`)";
     return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
 

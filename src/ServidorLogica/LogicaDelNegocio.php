@@ -12,10 +12,10 @@ include 'BaseDeDatos.php';
  */
 //------------------------------------------------------------------------------------------
 
-function guardarMedicion($instante, $idSensor, $valor)
+function guardarMedicion($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud)
 {
     //llamamos a la funcion previamente creada para guardar las mediciones
-    if (GuardarMedicionBBDD($instante, $idSensor, $valor)) {
+    if (GuardarMedicionBBDD($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud)) {
         echo "Guardado";
 
     } else {

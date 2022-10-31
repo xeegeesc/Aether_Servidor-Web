@@ -9,13 +9,15 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 if($metodo=='POST'){
 
     //Comprobamos los parámetros de entrada del POST para diferenciar qué se quiere insertar en la BBDD
-    if(isset($_POST["instante"])&&isset($_POST["idSensor"])){
+    if(isset($_POST["idSensor"])&&isset($_POST["valorMedicion"])&&isset($_POST["momentoMedicion"])&&isset($_POST["latitud"])&&isset($_POST["longitud"])){
         //Cogemos las variables y luego llamamos a guardarMedicion para insertar en la tabla
-        $instante = $_POST["instante"];
         $idSensor = $_POST["idSensor"];
-        $valor = $_POST["valor"];
+        $valorMedicion = $_POST["valorMedicion"];
+        $momentoMedicion = $_POST["momentoMedicion"];
+        $latitud = $_POST["latitud"];
+        $longitud = $_POST["longitud"];
 
-        guardarMedicion($instante,$idSensor,$valor);
+        guardarMedicion($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud);
     }elseif (isset($_POST["nombre"])&&isset($_POST["correo"])&&isset($_POST["contrasenya"])){
         $nombre=$_POST["nombre"];
         $correo=$_POST["correo"];

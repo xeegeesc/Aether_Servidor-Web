@@ -21,17 +21,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/php/phpunit-9.5.26 (1).phar",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/php/phpunit-9.5.26 (1).phar&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales">
+}</component>
+  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest">
+    <configuration name="LogicaDelNegocioTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1.12" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="LogicaDelNegocioTest.testComprobarCredenciales" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -52,10 +61,12 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
       </list>
     </recent_temporary>
@@ -68,7 +79,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
-      <workItem from="1667151876739" duration="520000" />
+      <workItem from="1667151876739" duration="651000" />
+      <workItem from="1667217450032" duration="694000" />
     </task>
     <servers />
   </component>
