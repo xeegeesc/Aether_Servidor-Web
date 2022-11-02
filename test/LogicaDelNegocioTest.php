@@ -47,6 +47,35 @@ public function testRegistrarUsuario()
     $this->assertNotTrue(registrarUsuario("Prueba", "prueba@gmail.com", "Prueba12"));
 }
 
+//------------------------------------------------------------------------------------------
+    /*
+     * testGuardarMedicion() es una función que comprueba que se puede guardar una medicion en la BBDD.
+     *
+     * Hay una asercion para comprobar que se puede registrar una medicion en BBDD.
+     *
+     */
+//------------------------------------------------------------------------------------------
+public function testGuardarMedicion(){
 
+    $this->assertTrue(guardarMedicion("SensorTestUnitario", "8888", "1667407607", "38.6555777", "-0.8888888"));
+
+}
+
+
+//------------------------------------------------------------------------------------------
+    /*
+     * testGetMediciones() es una función que comprueba que se pueden obtener toddas las mediciones de la BBDD, así como la ultima medicion guardada en la BBDD.
+     *
+     * Hay una asercion para comprobar que se puede obtener la última medicion en BBDD y otra para obtenerlas todas.
+     *
+     */
+//------------------------------------------------------------------------------------------
+    public function testGetMediciones(){
+
+        $this->assertTrue(obtenerMediciones());
+
+        $this->assertTrue(obtenerUltimaMedicion());
+
+    }
 }//class{}
 

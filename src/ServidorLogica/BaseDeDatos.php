@@ -54,7 +54,7 @@ function obtenerMedicionesBBDD(){
 //------------------------------------------------------------------------------------------
 function obtenerUltimaMedicionBBDD(){
     //obtenemos solo el ultimo valor de la tabla para ver el ultimo
-    $sql = "SELECT * FROM `medida` WHERE `momentoMedicion` = (SELECT MAX(`instante`) FROM `medida`)";
+    $sql = "SELECT * FROM `medida` WHERE `momentoMedicion` = (SELECT MAX(`momentoMedicion`) FROM `medida`)";
     return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
 

@@ -17,6 +17,7 @@ function guardarMedicion($idSensor,$valorMedicion,$momentoMedicion, $latitud, $l
     //llamamos a la funcion previamente creada para guardar las mediciones
     if (GuardarMedicionBBDD($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud)) {
         echo "Guardado";
+        return true;
 
     } else {
         http_response_code(401);
@@ -58,6 +59,7 @@ function obtenerMediciones()
 
     }
     echo json_encode($resultado);
+    return true;
 }//obtenerMediciones()
 
 //------------------------------------------------------------------------------------------
@@ -90,6 +92,7 @@ function obtenerUltimaMedicion()
 
     }
     echo json_encode($resultado);
+    return true;
 
 }//obtenerUltimaMedicion
 
