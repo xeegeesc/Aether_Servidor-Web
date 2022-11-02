@@ -4,7 +4,7 @@
         echo '
             <script>
                 alert("Inicia sesión y no me seas perro");
-                window.location = "gestionMediciones.php";
+                window.location = "../ux/index.php";
             </script>
         ';
         session_destroy();
@@ -23,6 +23,6 @@
 </head>
 <body>
     <h1>Bienvenido a mi mundo!</h1>
-    <a href="php/cerrar_sesion.php">Cerrar sesión</a>
+    <a href="../ServidorLogica/cerrar_sesion.php">Cerrar sesión</a>
 </body>
 </html>

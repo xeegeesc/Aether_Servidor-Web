@@ -26,13 +26,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ux",
+    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src" />
     </key>
@@ -111,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
       <workItem from="1667151876739" duration="651000" />
-      <workItem from="1667217450032" duration="6442000" />
+      <workItem from="1667217450032" duration="8143000" />
     </task>
     <servers />
   </component>

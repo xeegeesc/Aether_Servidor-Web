@@ -12,12 +12,7 @@ if($metodo=='POST') {
         $correo = $_POST['correo'];
 
         //llamada a la funcion de la lógica de negocio
-        if(comprobarCredenciales($_POST['correo'], $_POST['contrasenya'])){
-            session_start();
-            $_SESSION['usuario'] = $correo;
-            header("location: ../ux/bienvenida.php");
-            exit();
-        }
+        echo comprobarCredenciales($correo, $_POST["contrasenya"]);
     } else {
         echo "Error en la peticion GET. Parámetros incorrectos.";
     }
