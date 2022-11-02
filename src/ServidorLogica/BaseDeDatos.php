@@ -84,6 +84,31 @@ function registrarUsuarioBBDD($nombre,$correo,$contrasenya){
 
 //------------------------------------------------------------------------------------------
 /*
+ * comprobarCorreoBBDD() es una función que comprueba si existe en la BBDD el correo que llega como parámetro.
+ *
+ * @param correo Correo que se quiere verificar si esta en la BBDD o no.
+
+ *
+ * @returns Devuelve true si el la comprobacion se ha podido realizar, si no se ha podido realizar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function comprobarCorreoBBDD($correo){
+
+    $sql = "SELECT * FROM usuario WHERE correo = '$correo'";
+    if (mysqli_query(Conectar(), $sql)) {
+
+        return mysqli_query(Conectar(),$sql);
+
+    } else {
+        return false;
+    }
+
+}//comprobarCorreoBBDD()
+
+
+//------------------------------------------------------------------------------------------
+/*
  * comprobarCredencialesBBDD() es una función que comprueba que existan esa combinacion de correo y contraseña en la BBDD.
  *
  * @param correo email que debe pertenecer a algun usario de la BBDD.

@@ -4,7 +4,7 @@
         echo '
             <script>
                 alert("Inicia sesión y no me seas perro");
-                window.location = "index.php";
+                window.location = "gestionMediciones.php";
             </script>
         ';
         session_destroy();

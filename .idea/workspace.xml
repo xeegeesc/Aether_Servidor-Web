@@ -21,16 +21,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/php/phpunit-9.5.26 (1).phar&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ux",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
+    </key>
+  </component>
   <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest">
     <configuration name="LogicaDelNegocioTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
@@ -80,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
       <workItem from="1667151876739" duration="651000" />
-      <workItem from="1667217450032" duration="694000" />
+      <workItem from="1667217450032" duration="5408000" />
     </task>
     <servers />
   </component>

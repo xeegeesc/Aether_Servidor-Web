@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Test\\LogicaDelNegocioTest::testComprobarCredenciales":4,"Test\\LogicaDelNegocioTest::testRegistrarUsuario":3},"times":{"Test\\LogicaDelNegocioTest::testComprobarCredenciales":0.089,"Test\\LogicaDelNegocioTest::testRegistrarUsuario":0.014}}
+{"version":1,"defects":{"Test\\LogicaDelNegocioTest::testComprobarCredenciales":4,"Test\\LogicaDelNegocioTest::testRegistrarUsuario":3},"times":{"Test\\LogicaDelNegocioTest::testComprobarCredenciales":0.159,"Test\\LogicaDelNegocioTest::testRegistrarUsuario":0.046}}
