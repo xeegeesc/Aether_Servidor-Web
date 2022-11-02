@@ -18,11 +18,6 @@ if($metodo=='POST'){
         $longitud = $_POST["longitud"];
 
         guardarMedicion($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud);
-    }elseif (isset($_POST["nombre"])&&isset($_POST["correo"])&&isset($_POST["contrasenya"])){
-        $nombre=$_POST["nombre"];
-        $correo=$_POST["correo"];
-        $contrasenya=$_POST["contrasenya"];
-        registrarUsuario($nombre, $correo, $contrasenya);
     }
 
 }else if($metodo=='GET'){
@@ -40,8 +35,5 @@ if($metodo=='POST'){
             //obtenemos solo la ultima medicion
             echo obtenerUltimaMedicion();
         }
-    }else if(isset($_GET['correo'])&&isset($_GET['contrasenya'])) {
-
-        echo comprobarCredenciales($_GET['correo'], $_GET['contrasenya']);
     }
 }

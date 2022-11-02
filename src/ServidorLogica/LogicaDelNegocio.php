@@ -45,10 +45,13 @@ function obtenerMediciones()
     $i = 0;
     while ($fila = mysqli_fetch_array($Mediciones)) {
         $respuesta = [];
-        $respuesta["instante"] = $fila ["instante"];
-        $respuesta["idSensor"] = $fila ["idSensor"];
-        $respuesta["valor"] = $fila ["valor"];
 
+        $respuesta["idMedicion"] = $fila["idMedicion"];
+        $respuesta["idSensor"] = $fila ["idSensor"];
+        $respuesta["valorMedicion"] = $fila ["valorMedicion"];
+        $respuesta["momentoMedicion"] = $fila ["momentoMedicion"];
+        $respuesta["latitud"] = $fila ["latitud"];
+        $respuesta["longitud"] = $fila ["longitud"];
 
         $resultado[$i] = $respuesta;
         $i++;
@@ -75,10 +78,12 @@ function obtenerUltimaMedicion()
     $resultado = array();
     $i = 0;
     while ($fila = mysqli_fetch_array($Medicion)) {
-        $respuesta = [];
-        $respuesta["instante"] = $fila ["instante"];
+        $respuesta["idMedicion"] = $fila["idMedicion"];
         $respuesta["idSensor"] = $fila ["idSensor"];
-        $respuesta["valor"] = $fila ["valor"];
+        $respuesta["valorMedicion"] = $fila ["valorMedicion"];
+        $respuesta["momentoMedicion"] = $fila ["momentoMedicion"];
+        $respuesta["latitud"] = $fila ["latitud"];
+        $respuesta["longitud"] = $fila ["longitud"];
 
         $resultado[$i] = $respuesta;
         $i++;
