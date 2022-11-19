@@ -24,5 +24,7 @@
 <body>
     <h1>Bienvenido a mi mundo!</h1>
     <a href="../ServidorLogica/cerrar_sesion.php">Cerrar sesión</a>
+
+    <a href="perfilUsuario.php"></a>
 </body>
 </html>

@@ -6,11 +6,11 @@ include './LogicaDelNegocio.php';
 $metodo = $_SERVER['REQUEST_METHOD'];
 
 //comprobamos que el método sea POST
-if($metodo=='GET') {
-$correo=$_GET['correo'];
-$contrasenya=$_GET['contrasenya'];
+if($metodo=='POST') {
+$correo=$_POST['correo'];
+$contrasenya=$_POST['contrasenya'];
 $contrasenya_encriptada = hash('sha512', $contrasenya);
-$nuevaContrasenya=$_GET['contrasenya'];
+$nuevaContrasenya=$_POST['contrasenya'];
 $nuevaContrasenyaEncriptada=hash('sha512', $nuevaContrasenya);
 
 //------------------------------------------------------------------------------------------
