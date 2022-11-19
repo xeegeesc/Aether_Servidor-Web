@@ -13,13 +13,13 @@ if($metodo=='POST'){
         $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];
         $contrasenya = $_POST['contrasenya'];
-        $confirmar_contrasenya = $_POST['confirmar_contrasenya'];
+        //$confirmar_contrasenya = $_POST['confirmar_contrasenya'];
 
         //encriptar contraseña
         $contrasenya_encriptada = hash('sha512',$contrasenya);
 
         //comprobar que las 2 contraseñas coinciden
-        if ($contrasenya!=$confirmar_contrasenya){
+        /*if ($contrasenya!=$confirmar_contrasenya){
             echo'
             <script>
                 alert("Las contraseñas no coinciden");
@@ -28,29 +28,30 @@ if($metodo=='POST'){
             </script>
         ';
             exit();
-        }
+        }*/
         //Comprobar que el correo no se repita en la base de datos
-        else if (comprobarCorreo($correo)){
-            echo '
+         if (comprobarCorreo($correo)){
+            /*echo '
             <script>
                 alert("Este correo ya está registrado, intentelo con otro diferente");
                 window.location = "../ux/index.php";
             </script>
         ';
-            exit();
+            exit();*/
+             echo false;
         }
         else{
 
             if (registrarUsuario($nombre, $correo, $contrasenya_encriptada)){
 
                 registrarUsuario($nombre, $correo, $contrasenya_encriptada);
-                        echo '
+                        /*echo '
                     <script>
                         window.location = "../ux/index.php";
                         alert("Todo OK"); 
                     </script> 
-                ';
-            }else
+                ';*/
+            }/*else
             {
                         echo '
                     <script>
@@ -58,7 +59,7 @@ if($metodo=='POST'){
                         alert("Algo ha ido mal, intentalo de nuevo");
                     </script>
                 ';
-            }
+            }*/
         }
 
 

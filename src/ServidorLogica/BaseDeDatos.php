@@ -129,4 +129,33 @@ function comprobarCredencialesBBDD($correo,$contrasenya){
     } else {
         return false;
     }
+}//comprobarCredencialesBBDD()
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * cambiarContrasenyaBBDD() es una función que cambia la contraseña de un usuario comprobando el correo y la contraseña antigua.
+ *
+ * @param correo email que debe pertenecer a algun usario de la BBDD.
+ * @param contrasenya la contraseña que esta asociada a la cuenta del usuario.
+ * @param nuevaContrasenya la nueva contraseña que estará asociada a la cuenta del usuario.
+ *
+ * @returns Devuelve true si se ha cambiado la contraseña del usuario en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function cambiarContrasenyaBBDD($correo,$contrasenya, $nuevaContrasenya){
+
+    //$sql = "UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
+    //return mysqli_query(Conectar(),$sql);
+    $sql ="UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
+    if (mysqli_query(Conectar(), $sql)) {
+        echo "cambiarCOntrasenyaBBDD funcionaa ";
+        return mysqli_query(Conectar(),$sql);
+
+    } else {
+        return false;
+    }
 }
+
+

@@ -46,6 +46,24 @@ final class LogicaDelNegocioTest extends TestCase
         $this->assertNotTrue(registrarUsuario("Prueba", "prueba@gmail.com", "Prueba12"));
     }
 
+    //------------------------------------------------------------------------------------------
+    /*
+     * testCambiarContrasenya() es una función que comprueba que se puede cambiar la contraseña de un usuario en la BBDD.
+     *
+     * Hay dos aserciones, una para comprobar que se puede cambiar la contrasenya a un usario existente en BBDD
+     * y la otra para devolver al estado original la contrasenya del usuario.
+     *
+     *
+     */
+//------------------------------------------------------------------------------------------
+    public function testCambiarContrasenya()
+    {
+        //Comprueba que se puede registrar un usuario no existente en BBDD, si existe, esta asercion dará error
+        $this->assertTrue(cambiarContrasenya("prueba@gmail.com", "Prueba12", "PruebaTestCambiarContrasenya"));
+
+        //comprueba que no se puede registrar un usario ya existente
+        $this->assertTrue(cambiarContrasenya("prueba@gmail.com", "PruebaTestCambiarContrasenya", "Prueba12"));
+    }
 
 }//class{}
 

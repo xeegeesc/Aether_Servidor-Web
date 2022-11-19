@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------ HEAD ----------------------------------------------------------->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1"> <!--Configuraciones de la ventana-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Compatible para todos los nevegadores-->
+    <title>Inicio</title>
+
+    <!----------- Estilos ------------>
+    <style>
+        .container-encabezado{display: flex; flex-direction: row; justify-content: space-between}
+        .elementos-menu li{display:inline; padding-left:3px; padding-right:3px;}
+        .formulario-contactar {display: flex; flex-direction: column; margin-left: 20%; margin-right: 20%;}
+        input, textarea{margin: 20px; padding: 0.5rem}
+    </style>
+    <!-------------------------------->
+
+</head>
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------ BODY ----------------------------------------------------------->
+
+<body>
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------ SECCION BIENVENIDA --------------------------------------------------->
+<section class="bienvenida" id="ir_arriba">
+    <!-------------------------------------------------------------------------------------------------->
+    <!------------------------------------------- HEADER ----------------------------------------------->
+    <header class="encabezado" >
+        <div class="container-encabezado">
+            <!----------------------------------------------------------------->
+            <!-------------------------- Logo --------------------------------->
+            <a href="./index.html" class="logo">
+                <img src="Imagenes\Logo.png" alt="LogoAether">
+            </a>
+            <!----------------------------------------------------------------->
+            <!-------------------------- Menu --------------------------------->
+            <nav id="menu-principal">
+                <ul class="elementos-menu">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="#informacion">Información</a></li>
+                    <li><a href="#contactar">Contactanos</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                </ul>
+            </nav>
+            <!----------------------------------------------------------------->
+            <!--------------- Boton iniciar sesion/Registrarte ---------------->
+            <a href="../ux/index.php">IDENTIFICARSE</a>
+            <!----------------------------------------------------------------->
+            <!----------------------------------------------------------------->
+        </div>
+    </header>
+    <!-------------------------------------------------------------------------------------------------->
+    <!------------------------------------ APARTADO DE RECLAMO ----------------------------------------->
+    <div id="texto-reclamo">
+        <div class="container">
+            <!----------------------------------------------------------------->
+            <!------------ Contenido del apartado de reclamo ------------------>
+            <h1 class="titulo-reclamo">Titulo de reclamo</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis finibus felis vitae
+                placerat. Curabitur tincidunt sodales eleifend.
+                Vivamus venenatis placerat ullamcorper. Quisque eu nunc tincidunt,
+                ultricies velit nec, mollis leo. Suspendisse ornare, ligula ac maximus
+                luctus, nunc ipsum vulputate ligula, non euismod lorem dui nec enim.
+            </p>
+            <!----------------------------------------------------------------->
+            <!----------------------- Boton Contactar ------------------------->
+            <button type="button" class="boton-contactar">Contactar</button>
+            <!----------------------------------------------------------------->
+            <!----------------------------------------------------------------->
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------->
+</section>
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------ SECCION INFORMACIÓN -------------------------------------------------->
+<section id="informacion">
+    <div class="container">
+        <!----------------------------------------------------------------->
+        <!----------- Contenido del apartado de informacion --------------->
+        <h1 class="titulo">Titulo de información</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis finibus felis vitae
+            placerat. Curabitur tincidunt sodales eleifend.
+            Vivamus venenatis placerat ullamcorper. Quisque eu nunc tincidunt,
+            ultricies velit nec, mollis leo. Suspendisse ornare, ligula ac maximus
+            luctus, nunc ipsum vulputate ligula, non euismod lorem dui nec enim.
+        </p>
+        <!----------------------------------------------------------------->
+        <!----------------------------------------------------------------->
+    </div>
+</section>
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------ SECCION CONTACTAR ---------------------------------------------------->
+<section id="contactar">
+    <!----------------------------------------------------------------->
+    <!------------ Contenido del apartado de contactar ---------------->
+    <div class="container">
+        <h1 class="titulo">Titulo de contactar</h1>
+        <div class="container-formulario">
+            <form class="formulario-contactar">
+                <input type="text" id="contactar-nombre" name="contactar-nombre" placeholder="Nombre">
+                <input type="text" id="contactar-apellidos" name="contactar-apellidos" placeholder="Apellidos">
+                <input type="email" id="contactar-correo" name="contactar-correo" placeholder="Correo">
+                <textarea id="contactar-mensaje" name="contactar-mensaje" rows="10" cols="50" placeholder="Mensaje"></textarea>
+            </form>
+        </div>
+    </div>
+    <!----------------------------------------------------------------->
+    <!----------------------------------------------------------------->
+</section>
+<!----------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------ FOOTER --------------------------------------------------------->
+<footer class="pie-de-pagina">
+    <p>2022 Aether Technologies todos los derechos reservados</p>
+    <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Youtube</a></li>
+    </ul>
+</footer>
+<!----------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+
+</body>
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+</html>

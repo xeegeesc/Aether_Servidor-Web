@@ -21,16 +21,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica" />
@@ -41,7 +41,7 @@
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testGetMediciones">
+  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya">
     <configuration name="LogicaDelNegocioTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -51,13 +51,13 @@
       <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="LogicaDelNegocioTest.testComprobarCredenciales" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="LogicaDelNegocioTest.testCambiarContrasenya" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 8.1.12" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testComprobarCredenciales" scope="Method" />
+      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testCambiarContrasenya" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="LogicaDelNegocioTest.testGetMediciones" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -78,6 +78,15 @@
       <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testGuardarMedicion" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="LogicaDelNegocioTest.testRegistrarUsuario" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1.12" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testRegistrarUsuario" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -89,17 +98,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGetMediciones" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGuardarMedicion" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
-      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGetMediciones" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGuardarMedicion" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
-        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testComprobarCredenciales" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +123,10 @@
       <option name="presentableId" value="Default" />
       <updated>1667151874567</updated>
       <workItem from="1667151876739" duration="651000" />
-      <workItem from="1667217450032" duration="8143000" />
+      <workItem from="1667217450032" duration="8964000" />
+      <workItem from="1667497337395" duration="6177000" />
+      <workItem from="1668532753629" duration="42000" />
+      <workItem from="1668853823673" duration="5151000" />
     </task>
     <servers />
   </component>
