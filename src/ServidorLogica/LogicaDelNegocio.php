@@ -225,3 +225,33 @@ function cambiarContrasenya($correo, $contrasenya, $nuevaContrasenya)
         die();
     }
 }//comprobarCredenciales()
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * borrarUsuario() es una función que borra un usuario comprobando el correo y la contraseña que tiene en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param contrasenya la contraseña que esta asociada a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha borrado el usuario en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function borrarUsuario($correo, $contrasenya)
+{
+
+    if (borrarUsuarioBBDD($correo, $contrasenya)) {
+
+        if (borrarUsuarioBBDD($correo, $contrasenya)) {
+
+            echo ("borrarUsuario llega");
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        http_response_code(401);
+        die();
+    }
+}//comprobarCredenciales()

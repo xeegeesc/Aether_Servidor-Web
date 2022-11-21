@@ -31,8 +31,9 @@ final class LogicaDelNegocioTest extends TestCase
     /*
      * testRegistrarUsuario() es una función que comprueba que se puede registrar un usuario en la BBDD.
      *
-     * Hay dos aserciones, una para comprobar que se puede registrar un usario no existente en BBDD
-     * y la otra para comprobar que devuelve false si ya existe el usuario a registrar.
+     * Hay tres aserciones, una para comprobar que se puede registrar un usario no existente en BBDD
+     * y la segunda para borrar el usuario creado y dejar la BBDD como estaba.
+     * La ultima aserción sirve para comprobar que devuelve false si ya existe el usuario a registrar.
      *
      *
      */
@@ -41,6 +42,9 @@ final class LogicaDelNegocioTest extends TestCase
     {
         //Comprueba que se puede registrar un usuario no existente en BBDD, si existe, esta asercion dará error
         $this->assertTrue(registrarUsuario("PruebaTest", "pruebaTest@gmail.com", "PruebaTest"));
+
+        $this->assertTrue(borrarUsuario("PruebaTest", "pruebaTest@gmail.com"));
+
 
         //comprueba que no se puede registrar un usario ya existente
         $this->assertNotTrue(registrarUsuario("Prueba", "prueba@gmail.com", "Prueba12"));
@@ -64,6 +68,8 @@ final class LogicaDelNegocioTest extends TestCase
         //comprueba que no se puede registrar un usario ya existente
         $this->assertTrue(cambiarContrasenya("prueba@gmail.com", "PruebaTestCambiarContrasenya", "Prueba12"));
     }
+
+
 
 }//class{}
 

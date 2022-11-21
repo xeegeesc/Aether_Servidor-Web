@@ -158,4 +158,29 @@ function cambiarContrasenyaBBDD($correo,$contrasenya, $nuevaContrasenya){
     }
 }
 
+//------------------------------------------------------------------------------------------
+/*
+ * borrarUsuarioBBDD() es una función que borra un usuario comprobando el correo y la contraseña que tiene en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param contrasenya la contraseña que esta asociada a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha borrado el usuario en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function borrarUsuarioBBDD($correo,$contrasenya){
+
+    //$sql = "UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
+    //return mysqli_query(Conectar(),$sql);
+    $sql ="DELETE FROM `usuario` WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
+    if (mysqli_query(Conectar(), $sql)) {
+        echo "borrarUsuarioBBDD funcionaa ";
+        return mysqli_query(Conectar(),$sql);
+
+    } else {
+        return false;
+    }
+}
+
 
