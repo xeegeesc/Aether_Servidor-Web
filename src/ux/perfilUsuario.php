@@ -16,7 +16,7 @@
         <h2>Cambiar contraseña</h2>
         <input type="text" placeholder=correo name="correo">
         <input type="text" placeholder=contrasenya name="contrasenya">
-        <input type="password" placeholder="nuevaContraseña" name="nuevaContrasenya">
+        <input type="password" placeholder="nuevaContrasenya" name="nuevaContrasenya">
         <button>Cambiar Contraseña</button>
     </form>
 

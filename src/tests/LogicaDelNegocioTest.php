@@ -69,6 +69,23 @@ final class LogicaDelNegocioTest extends TestCase
         $this->assertTrue(cambiarContrasenya("prueba@gmail.com", "PruebaTestCambiarContrasenya", "Prueba12"));
     }
 
+    //------------------------------------------------------------------------------------------
+    /*
+     * testObtenerDatosUsuario() es una función que obtiene los datos de un usuario en la BBDD.
+     *
+     * Hay una sola aserción que comprueba que los datos obtenidos del usuario son los previamente establecidos.
+     *
+     *
+     */
+//------------------------------------------------------------------------------------------
+    public function testObtenerDatosUsuario()
+    {
+        $datosRelativos = obtenerDatosUsuario('prueba@gmail.com');
+
+        //Comprueba que los datos obtenidos del usuario son los esperados
+       $this->assertJsonStringEqualsJsonString($datosRelativos , '{"nombre":"Prueba", "correo":"prueba@gmail.com", "idAvatar":"0"}');
+    }
+
 
 
 }//class{}

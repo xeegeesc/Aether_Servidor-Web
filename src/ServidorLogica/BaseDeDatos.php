@@ -183,4 +183,22 @@ function borrarUsuarioBBDD($correo,$contrasenya){
     }
 }
 
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerDatosUsuarioBBDD() es una función que obtiene los datos de un usuario en la BBDD según su correo.
+ *
+ * @param correo email que debe pertenecer a algun usario de la BBDD.
+ *
+ *
+ * @returns Devuelve la query del sql que se ha realizado con los datos si el usuario se ha podido encontrar en la BBDD,
+ * si no se ha podido encontrar o ha habido algun error la funcion devolverá la excepción.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerDatosUsuarioBBDD($correo){
+    //obtenemos solo el ultimo valor de la tabla para ver el ultimo
+    $sql = "SELECT * FROM `usuario` WHERE `correo`='".$correo."'";
+    return mysqli_query(Conectar(),$sql);
+}//obtenerUltimaMedicionBBDD()
+
+
 

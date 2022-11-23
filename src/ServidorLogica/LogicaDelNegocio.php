@@ -224,7 +224,7 @@ function cambiarContrasenya($correo, $contrasenya, $nuevaContrasenya)
         http_response_code(401);
         die();
     }
-}//comprobarCredenciales()
+}//cambiarContrasenya()
 
 
 //------------------------------------------------------------------------------------------
@@ -241,17 +241,51 @@ function cambiarContrasenya($correo, $contrasenya, $nuevaContrasenya)
 function borrarUsuario($correo, $contrasenya)
 {
 
-    if (borrarUsuarioBBDD($correo, $contrasenya)) {
+    if (comprobarCredenciales($correo, $contrasenya)) {
 
         if (borrarUsuarioBBDD($correo, $contrasenya)) {
 
             echo ("borrarUsuario llega");
             return true;
         } else {
-            return false;
+            return false; //Falta excepciones
         }
     } else {
         http_response_code(401);
         die();
     }
-}//comprobarCredenciales()
+}//borrarUsuario()
+
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerDatosUsuario() es una función que obtiene los datos de un usuario en la BBDD según su correo.
+ *
+ * @param correo email que debe pertenecer a algun usario de la BBDD.
+ *
+ *
+ * @returns Devuelve un json con los datos si el usuario se ha podido encontrar en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá la excepción.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerDatosUsuario($correo)
+{
+    //Llamamos de nuevo a la funcion previamente creada
+    try{
+        $datosUsuario = obtenerDatosUsuarioBBDD($correo);
+
+        $resultadoDatos = array();
+        $i = 0;
+        while ($fila = mysqli_fetch_array($datosUsuario)) {
+            $respuesta["nombre"] = $fila["nombre"];
+            $respuesta["correo"] = $fila ["correo"];
+            $respuesta["idAvatar"] = $fila ["idAvatar"];
+
+            $resultadoDatos[$i] = $respuesta;
+            $i++;
+        }
+
+        return json_encode($respuesta);
+    }catch (mysqli_sql_exception $exception){
+        return $exception;
+    }
+}//obtenerDatosUsuario()

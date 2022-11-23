@@ -42,7 +42,11 @@
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario (1)">
+  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest.testObtenerDatosUsuario">
+    <configuration name="LogicaDelNegocioTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="LogicaDelNegocioTest.testCambiarContrasenya" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -52,22 +56,8 @@
       <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testCambiarContrasenya" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="LogicaDelNegocioTest.testGetMediciones" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 8.1.12" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testGetMediciones" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="LogicaDelNegocioTest.testGuardarMedicion" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 8.1.12" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/test/LogicaDelNegocioTest.php" method="testGuardarMedicion" scope="Method" />
+    <configuration name="LogicaDelNegocioTest.testObtenerDatosUsuario" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testObtenerDatosUsuario" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="LogicaDelNegocioTest.testRegistrarUsuario (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -94,19 +84,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerDatosUsuario" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario (1)" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
       <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario" />
-      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGetMediciones" />
-      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGuardarMedicion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerDatosUsuario" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario (1)" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
         <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario" />
-        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGetMediciones" />
-        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testGuardarMedicion" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +114,9 @@
       <workItem from="1668532753629" duration="42000" />
       <workItem from="1668853823673" duration="6930000" />
       <workItem from="1669024101748" duration="666000" />
+      <workItem from="1669032470325" duration="1987000" />
+      <workItem from="1669142422540" duration="821000" />
+      <workItem from="1669198468331" duration="3770000" />
     </task>
     <servers />
   </component>
