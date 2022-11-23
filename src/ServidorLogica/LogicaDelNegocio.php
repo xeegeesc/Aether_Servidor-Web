@@ -289,3 +289,45 @@ function obtenerDatosUsuario($correo)
         return $exception;
     }
 }//obtenerDatosUsuario()
+
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerCalidadAire() es una función que obtiene un porcentaje de O3 en el aire a lo largo del día hasta el momento actual.
+ *
+ * @param idSensor UUID en texto del sensor del cual se quieren recibir las medidas
+ *
+ * @returns Devuelve un porcentaje de O3 en el aire a lo largo del día si todo ha ido bien , si no se ha podido recoger las medidas de la BBDD o ha habido algun error
+ * la funcion devolverá la excepción.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerCalidadAire($idSensor)
+{
+    //Llamamos de nuevo a la funcion previamente creada
+    try{
+        $datosMedidas = obtenerCalidadAireBBDD($idSensor);
+
+        $resultadoDatos = array();
+        $i = 0;
+        while ($fila = mysqli_fetch_array($datosMedidas)) {
+            $respuesta["idMedicion"] = $fila["idMedicion"];
+            $respuesta["valorMedicion"] = $fila ["valorMedicion"];
+            $resultadoDatos[$i] = $respuesta;
+
+            $i++;
+        }
+        $jsonResupuesta=json_encode($resultadoDatos);
+        $valorTotal=0;
+        $valorMaximoSensor = 1980;
+        for($i =0;$i<sizeof($resultadoDatos);$i++){
+            $cadaMedicion=$resultadoDatos[$i];
+            $valorMedicion=$cadaMedicion["valorMedicion"];
+            $valorTotal=$valorTotal+ floatval($valorMedicion);
+        }
+        $media=$valorTotal/sizeof($resultadoDatos);
+        $porcentaje = round(($media*100)/$valorMaximoSensor, 2) ;
+        return $porcentaje;
+        //return json_encode($respuesta);
+    }catch (mysqli_sql_exception $exception){
+        return $exception;
+    }
+}//obtenerDatosUsuario()

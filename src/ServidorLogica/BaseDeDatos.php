@@ -198,7 +198,22 @@ function obtenerDatosUsuarioBBDD($correo){
     //obtenemos solo el ultimo valor de la tabla para ver el ultimo
     $sql = "SELECT * FROM `usuario` WHERE `correo`='".$correo."'";
     return mysqli_query(Conectar(),$sql);
+}//obtenerDatosUsuarioBBDD()
+
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerCalidadAireBBDD() es una función que obtiene las medidas de O3 en el aire a lo largo del día hasta el momento actual.
+ *
+ * @param idSensor UUID en texto del sensor del cual se quieren recibir las medidas
+ *
+ * @returns Devuelve la query del sql que se ha realizado con los datos de O3 en el aire a lo largo del día si todo ha ido bien ,
+ * si no se ha podido recoger las medidas de la BBDD o ha habido algun error la funcion devolverá la excepción.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerCalidadAireBBDD($idSensor){
+    $milliseconds = floor(microtime(true) * 1000);
+    //obtenemos solo el ultimo valor de la tabla para ver el ultimo
+    $sql = "SELECT * FROM `medida` WHERE `momentoMedicion` > ($milliseconds-86400000) AND `idSensor`='$idSensor'";
+    return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
-
-
 

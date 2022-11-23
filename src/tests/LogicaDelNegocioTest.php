@@ -87,6 +87,23 @@ final class LogicaDelNegocioTest extends TestCase
     }
 
 
+    //------------------------------------------------------------------------------------------
+    /*
+     * testObtenerCalidadAire() es una función que obtiene el porcentaje de concentracion de un gas a lo largo de un día.
+     *
+     * Hay una sola aserción que comprueba que el porcentaje resultante es los previamente establecidos como prueba.
+     *
+     *
+     */
+//------------------------------------------------------------------------------------------
+    public function testObtenerCalidadAire()
+    {
+        $datosRelativos = obtenerCalidadAire('SensorMedidas');
+
+
+        //Comprueba que los datos obtenidos del usuario son los esperados
+        $this->assertEquals($datosRelativos , '15.17');
+    }
 
 }//class{}
 
