@@ -5,11 +5,11 @@ include './LogicaDelNegocio.php';
 
 $metodo = $_SERVER['REQUEST_METHOD'];
 
-//comprobamos que el método sea GET
+//comprobamos que el método sea POST
 //La petición GET ha de realizarse con el correo del usuario como parámetro.
 // Éste se comprobará con el correo identificativo del usuario con sesion activa.
-if($metodo=='GET') {
-    if($_GET['correo']==$_SESSION['usuario']){
+if($metodo=='POST') {
+    if($_POST['correo']==$_SESSION['usuario']){
 
 //------------------------------------------------------------------------------------------
         /*
@@ -22,7 +22,7 @@ if($metodo=='GET') {
          * la funcion devolverá la excepción.
          */
 //------------------------------------------------------------------------------------------
-        $datosUsuario = obtenerDatosUsuario($_GET['correo']);
+        $datosUsuario = obtenerDatosUsuario($_POST['correo']);
 
         echo $datosUsuario;
     }else{

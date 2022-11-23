@@ -6,12 +6,13 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 //comprobamos que el método sea GET
 
-if($metodo=='GET') {
-    if(isset($_GET['idSensor'])){
-        $mediaCalidad = obtenerCalidadAire($_GET['idSensor']);
+if($metodo=='POST') {
+    if(isset($_POST['idSensor'])){
+        $mediaCalidad = obtenerCalidadAire($_POST['idSensor']);
+        echo $mediaCalidad;
+
     }else{
         echo "Parametro del GET incorrecto, Introduzca la idSensor objetivo";
     }
 
-    echo $mediaCalidad;
 }
