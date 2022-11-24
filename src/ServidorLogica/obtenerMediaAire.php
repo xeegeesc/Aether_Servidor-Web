@@ -6,9 +6,9 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 
 //comprobamos que el método sea GET
 
-if($metodo=='POST') {
-    if(isset($_POST['idSensor'])){
-        $mediaCalidad = obtenerCalidadAire($_POST['idSensor']);
+if($metodo=='GET') {
+    if(isset($_GET['idSensor'])){
+        $mediaCalidad = obtenerCalidadAire($_GET['idSensor']);
         echo $mediaCalidad;
 
     }else{

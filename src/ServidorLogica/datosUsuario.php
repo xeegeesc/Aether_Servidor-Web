@@ -9,7 +9,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 //La petición GET ha de realizarse con el correo del usuario como parámetro.
 // Éste se comprobará con el correo identificativo del usuario con sesion activa.
 if($metodo=='POST') {
-    if($_POST['correo']==$_SESSION['usuario']){
+    if($_GET['correo']==$_SESSION['usuario']){
 
 //------------------------------------------------------------------------------------------
         /*
@@ -22,7 +22,7 @@ if($metodo=='POST') {
          * la funcion devolverá la excepción.
          */
 //------------------------------------------------------------------------------------------
-        $datosUsuario = obtenerDatosUsuario($_POST['correo']);
+        $datosUsuario = obtenerDatosUsuario($_GET['correo']);
 
         echo $datosUsuario;
     }else{
