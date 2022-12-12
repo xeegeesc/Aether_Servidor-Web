@@ -8,8 +8,7 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 //comprobamos que el método sea POST
 //La petición GET ha de realizarse con el correo del usuario como parámetro.
 // Éste se comprobará con el correo identificativo del usuario con sesion activa.
-if($metodo=='POST') {
-    if($_GET['correo']==$_SESSION['usuario']){
+if($metodo=='GET') {
 
 //------------------------------------------------------------------------------------------
         /*
@@ -25,7 +24,5 @@ if($metodo=='POST') {
         $datosUsuario = obtenerDatosUsuario($_GET['correo']);
 
         echo $datosUsuario;
-    }else{
-        echo "No se ha iniciado sesión. El correo de la petición y de la sesión activa no coinciden";
-    }
+
 }

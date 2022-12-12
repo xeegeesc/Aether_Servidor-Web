@@ -1,0 +1,2 @@
+Estos 3 archivos son los necesarios para el uso de las librerías de envío de correos electrónicos en este proyecto.
+Son utilizadas en el archivo Reset.php en la carpeta RC.

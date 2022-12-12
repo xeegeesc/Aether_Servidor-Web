@@ -331,3 +331,98 @@ function obtenerCalidadAire($idSensor)
         return $exception;
     }
 }//obtenerDatosUsuario()
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * recuperarContrasenya() es una función que cambia la contraseña que tiene un usuario en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param contrasenya_encriptada la contraseña que esta asociada a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha cambiado la contraseña en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function recuperarContrasenya($correo, $contrasenya_encriptada){
+    if(recuperarContrasenyaBBDD($correo,$contrasenya_encriptada)){
+        return true;
+    }else{
+        return false;}
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * cambiarNombreUsuario() es una función que cambia el nombre que tiene un usuario en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param nombre el nombre que está asociado a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha cambiado el nombre en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function cambiarNombreUsuario($correo, $nombre){
+    if(cambiarNombreUsuarioBBDD($correo,$nombre)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * asignarSensorUsuario() es una función que asigna un usuario a un sensor en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param idSensor id del sensor el cual va a ser asignado.
+
+ * @returns Devuelve true si se ha asignado en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function asignarSensorUsuario($correo, $idSensor){
+    if(asignarSensorUsuarioBBDD($correo,$idSensor)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * verificarToken() es una función que verifica que el codigo generado como seguridad al crear un usuario o recuperar la contraseña es el correcto.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param codigo codigo que se quiere comparar con el de BBDD.
+
+ * @returns Devuelve true si el codigo coincide, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function verificarToken($correo, $codigo)
+{
+    if(verificarTokenBD($correo,$codigo)){
+        return true;
+    }else{
+        return false;}
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * insertarCodigo() es una función que inserta el codigo recibido en el correo de verificacion en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param codigo codigo recibido en el correo de verificación.
+
+ * @returns Devuelve true si se ha insertado la conbinacion correo-codigo en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function insertarCodigo($correo, $codigo)
+{
+    if(insertarCodigoBBDD($correo,$codigo)){
+        return true;
+    }else{
+        return false;}
+}

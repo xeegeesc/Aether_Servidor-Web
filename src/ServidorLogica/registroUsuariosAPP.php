@@ -15,6 +15,7 @@ if($metodo=='POST'){
         $contrasenya = $_POST['contrasenya'];
         //$confirmar_contrasenya = $_POST['confirmar_contrasenya'];
 
+        echo $nombre. " " .$correo;
         //encriptar contraseña
         $contrasenya_encriptada = hash('sha512',$contrasenya);
 
@@ -41,6 +42,7 @@ if($metodo=='POST'){
              echo false;
         }
         else{
+
 
             if (registrarUsuario($nombre, $correo, $contrasenya_encriptada)){
 

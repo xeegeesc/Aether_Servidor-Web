@@ -217,3 +217,119 @@ function obtenerCalidadAireBBDD($idSensor){
     return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
 
+/*
+function insertarCodigoBBDD($correo,$codigo){
+    $sql = "insert into passwords (email, codigo) values('$correo','$codigo')";
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}*/
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * recuperarContrasenyaBBDD() es una función que cambia la contraseña que tiene un usuario en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param contrasenya_encriptada la contraseña que esta asociada a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha cambiado la contraseña en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function recuperarContrasenyaBBDD($correo,$contrasenya_encriptada){
+    $sql="UPDATE usuario SET contrasenya='$contrasenya_encriptada' where correo='$correo'";
+
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * cambiarNombreUsuarioBBDD() es una función que cambia el nombre que tiene un usuario en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param nombre el nombre que está asociado a la cuenta del usuario.
+
+ * @returns Devuelve true si se ha cambiado el nombre en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function cambiarNombreUsuarioBBDD($correo,$nombre){
+    $sql="UPDATE usuario SET nombre='$nombre' where correo='$correo'";
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}
+//------------------------------------------------------------------------------------------
+/*
+ * asignarSensorUsuarioBBDD() es una función que asigna un usuario a un sensor en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param idSensor id del sensor el cual va a ser asignado.
+
+ * @returns Devuelve true si se ha asignado en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function asignarSensorUsuarioBBDD($correo,$idSensor){
+    $sql="UPDATE sensor SET idUsuario='$correo' where idSensor='$idSensor'";
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * verificarTokenBBDD() es una función que verifica que el codigo generado como seguridad al crear un usuario o recuperar la contraseña es el correcto.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param codigo codigo que se quiere comparar con el de BBDD.
+
+ * @returns Devuelve true si el codigo coincide, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function verificarTokenBD($correo,$codigo){
+    $sql = "SELECT * FROM passwords WHERE email='$correo' and codigo='$codigo'";
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+/*
+ * insertarCodigoBBDD() es una función que inserta el codigo recibido en el correo de verificacion en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param codigo codigo recibido en el correo de verificación.
+
+ * @returns Devuelve true si se ha insertado la conbinacion correo-codigo en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function insertarCodigoBBDD($correo,$codigo){
+    $sql = "insert into passwords (email, codigo) values('$correo','$codigo')";
+    if (mysqli_query(Conectar(), $sql)) {
+        return true;
+
+    } else {
+        return false;
+    }
+}

@@ -10,7 +10,7 @@ if($metodo=='POST') {
 $correo=$_POST['correo'];
 $contrasenya=$_POST['contrasenya'];
 $contrasenya_encriptada = hash('sha512', $contrasenya);
-$nuevaContrasenya=$_POST['contrasenya'];
+$nuevaContrasenya=$_POST['nuevaContrasenya'];
 $nuevaContrasenyaEncriptada=hash('sha512', $nuevaContrasenya);
 
 //------------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ $nuevaContrasenyaEncriptada=hash('sha512', $nuevaContrasenya);
      * la funcion devolverá false.
      */
 //------------------------------------------------------------------------------------------
-if(cambiarContrasenya($correo, $contrasenya, $nuevaContrasenya)){
+if(cambiarContrasenya($correo, $contrasenya_encriptada, $nuevaContrasenyaEncriptada)){
     echo ("contraseña cambiada");
 }
 }
