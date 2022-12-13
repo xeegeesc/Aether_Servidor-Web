@@ -16,7 +16,6 @@ if($metodo=='POST'){
         $confirmar_contrasenya = $_POST['confirmar_contrasenya'];
 
         //encriptar contraseña
-        $contrasenya_encriptada = hash('sha512',$contrasenya);
 
         //comprobar que las 2 contraseñas coinciden
         if ($contrasenya!=$confirmar_contrasenya){
@@ -41,9 +40,9 @@ if($metodo=='POST'){
         }
         else{
 
-            if (registrarUsuario($nombre, $correo, $contrasenya_encriptada)){
+            if (registrarUsuario($nombre, $correo, $contrasenya)){
 
-                registrarUsuario($nombre, $correo, $contrasenya_encriptada);
+                registrarUsuario($nombre, $correo, $contrasenya);
                         echo '
                     <script>
                         window.location = "../ux/index.php";

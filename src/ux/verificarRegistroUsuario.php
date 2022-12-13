@@ -30,6 +30,7 @@ echo $vars['nombre'];
         <input type="hidden" class="form-control" name="nombre" value="<?php echo $vars['nombre'] ?> ">
         <input type="hidden" class="form-control" name="correo" value="<?php echo $vars['correo'] ?> ">
         <input type="hidden" class="form-control" name="contrasenya" value="<?php echo $vars['contrasenya'] ?> ">
+        <input type="hidden" class="form-control" name="confirmar_contrasenya" value="<?php echo $vars['contrasenya'] ?> ">
 
 
         <button>Verificar</button>

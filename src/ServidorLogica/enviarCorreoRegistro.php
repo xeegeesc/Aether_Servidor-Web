@@ -15,8 +15,10 @@ if($metodo=='POST') {
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
     $contrasenya = $_POST['contrasenya'];
+    $contrasenya_encriptada = hash('sha512',$contrasenya);
+
     //$codigo= 8888;
-    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuario.php?nombre=".$nombre."&correo=".$correo."&contrasenya=".$contrasenya;
+    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuario.php?nombre=".$nombre."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
 
     try {
         //Server settings

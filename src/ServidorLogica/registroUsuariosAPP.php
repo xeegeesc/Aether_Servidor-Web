@@ -17,7 +17,6 @@ if($metodo=='POST'){
 
         echo $nombre. " " .$correo;
         //encriptar contraseña
-        $contrasenya_encriptada = hash('sha512',$contrasenya);
 
         //comprobar que las 2 contraseñas coinciden
         /*if ($contrasenya!=$confirmar_contrasenya){
@@ -43,25 +42,8 @@ if($metodo=='POST'){
         }
         else{
 
+                registrarUsuario($nombre, $correo, $contrasenya);
 
-            if (registrarUsuario($nombre, $correo, $contrasenya_encriptada)){
-
-                registrarUsuario($nombre, $correo, $contrasenya_encriptada);
-                        /*echo '
-                    <script>
-                        window.location = "../ux/index.php";
-                        alert("Todo OK"); 
-                    </script> 
-                ';*/
-            }/*else
-            {
-                        echo '
-                    <script>
-                        window.location = "../ux/index.php";
-                        alert("Algo ha ido mal, intentalo de nuevo");
-                    </script>
-                ';
-            }*/
         }
 
 

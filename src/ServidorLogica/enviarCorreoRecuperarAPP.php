@@ -5,21 +5,19 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
-
+include './LogicaDelNegocio.php';
 
 $mail = new PHPMailer(true);
 $metodo = $_SERVER['REQUEST_METHOD'];
 
 //comprobamos que el método sea POST
 if($metodo=='POST') {
-    $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
-    $contrasenya = $_POST['contrasenya'];
-    $contrasenya_encriptada = hash('sha512',$contrasenya);
-
+    $codigo= rand(1000,9999);
     //$codigo= 8888;
-    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuarioWeb.php?nombre=".$nombre."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
+    $_POST['codigo']=$codigo;
 
+    $enlace="https://jmarzoz.upv.edu.es/src/ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo;
     try {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
@@ -36,17 +34,18 @@ if($metodo=='POST') {
         $mail->addAddress($correo);     //Add a recipient
 
 
-        //Content
+        //Contenido del Correo
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'AETHER - Solicitud de Registro de Usuario';
-        $mail->Body = 'Entra en el siguiente enlace para verificar tu usuario: '.$enlace;
+        $mail->Subject = 'AETHER - Solicitud de Cambio de contraseña';
+        $mail->Body = 'Tu codigo es: '.$codigo."\n Entre en el siguiente enlace para CAMBIAR SU CONTRASEÑA: ".$enlace;
 
 
         $mail->send();
         echo 'Se ha enviado correctamente';
 
+        insertarCodigo($correo, $codigo);
 
-       // header("location: ../ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo);
+        //header("location: ../ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo);
 
     } catch (Exception $e) {
         echo "Ha habido un error al enviar el correo. Mailer Error: {$mail->ErrorInfo}";

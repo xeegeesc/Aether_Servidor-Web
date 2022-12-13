@@ -38,11 +38,11 @@ if($metodo=='POST') {
         $mail->Subject = 'AETHER - Solicitud de Cambio de contraseña';
         $mail->Body = 'Tu codigo es: '.$codigo;
 
-
         $mail->send();
         echo 'Se ha enviado correctamente';
-
         insertarCodigo($correo, $codigo);
+
+
 
         header("location: ../ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo);
 

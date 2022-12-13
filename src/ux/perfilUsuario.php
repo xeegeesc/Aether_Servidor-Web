@@ -12,7 +12,7 @@
     <h1>Bienvenido al perfil de usuario!</h1>
     <a href="../ServidorLogica/cerrar_sesion.php">Cerrar sesión</a>
 
-    <form action="../ServidorLogica/cambiarContrasenya.php" method="post" class="formulario__login">
+    <form action="../ServidorLogica/enviarCorreoCambioContrasenya.php" method="post" class="formulario__login">
         <h2>Cambiar contraseña</h2>
         <input type="text" placeholder=correo name="correo">
         <input type="text" placeholder=contrasenya name="contrasenya">

@@ -105,5 +105,15 @@ final class LogicaDelNegocioTest extends TestCase
         $this->assertEquals($datosRelativos , '15.17');
     }
 
+
+
+    public function testAsignarSensor()
+    {
+
+
+        //Comprueba que la funcion devuelve false cuando el idSensor introducido es erróneo
+        $this->assertFalse(asignarSensorUsuario("prueba@gmail.com", "wiwowawu"));
+    }
+
 }//class{}
 

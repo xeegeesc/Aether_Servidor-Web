@@ -52,6 +52,7 @@ if(verificarToken($correo, $codigo)) {
             <div class="mb-3">
             <label for="c" class="form-label"> Confirmar contraseña</label>
             <input type="password" class="form-control" id="c" name="c2">
+
             <input type="hidden" class="form-control" id="c" name="correo">
             </div> 
 
