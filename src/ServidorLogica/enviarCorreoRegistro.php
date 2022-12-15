@@ -13,12 +13,13 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 //comprobamos que el método sea POST
 if($metodo=='POST') {
     $nombre = $_POST['nombre'];
+    $nombreSinEspacios = str_replace(' ', '-', $nombre);
     $correo = $_POST['correo'];
     $contrasenya = $_POST['contrasenya'];
     $contrasenya_encriptada = hash('sha512',$contrasenya);
 
     //$codigo= 8888;
-    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuario.php?nombre=".$nombre."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
+    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuario.php?nombre=".$nombreSinEspacios."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
 
     try {
         //Server settings
@@ -39,7 +40,16 @@ if($metodo=='POST') {
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'AETHER - Solicitud de Registro de Usuario';
-        $mail->Body = 'Entra en el siguiente enlace para verificar tu usuario: '.$enlace;
+        $mail->AddEmbeddedImage('../ux/assets/images/logo.png','Imagen Logo Aether','file/logo.png','base64','image/png');
+        $mail->AddEmbeddedImage('../ux/assets/images/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','Imagen Logo Ministerio','file/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','base64','image/png');
+
+        //$body = "<img src='../ux/assets/images/logo.png' alt='Logotipo Ministerio Sanidad, Consumo y Bienestar' width='999' height='249'><br><br>";
+        //$body .= "<img src='../ux/assets/images/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png' alt='Logotipo Ministerio Sanidad, Consumo y Bienestar' width='1000' height='343'><br><br>";
+        //$body .= 'Entra en el siguiente enlace para verificar tu usuario: \n'.$enlace;
+
+        $body = 'Entra en el siguiente enlace para verificar tu usuario: <br><br>'.$enlace;
+        $mail->Body = $body;
+
 
 
         $mail->send();

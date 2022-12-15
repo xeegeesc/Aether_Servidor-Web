@@ -17,7 +17,7 @@ if($metodo=='POST') {
     //$codigo= 8888;
     $_POST['codigo']=$codigo;
 
-    $enlace="https://jmarzoz.upv.edu.es/src/ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo;
+    $enlace="https://jmarzoz.upv.edu.es/src/ServidorLogica/RC/verificartokenRecuperar.php?correo=".$correo."&codigo=".$codigo;
     try {
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
@@ -37,7 +37,10 @@ if($metodo=='POST') {
         //Contenido del Correo
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'AETHER - Solicitud de Cambio de contraseña';
-        $mail->Body = 'Tu codigo es: '.$codigo."\n Entre en el siguiente enlace para CAMBIAR SU CONTRASEÑA: ".$enlace;
+        $mail->AddEmbeddedImage('../ux/assets/images/logo.png','Imagen Logo Aether','file/logo.png','base64','image/png');
+        $mail->AddEmbeddedImage('../ux/assets/images/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','Imagen Logo Ministerio','file/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','base64','image/png');
+
+        $mail->Body = "Entre en el siguiente enlace para CAMBIAR SU CONTRASEÑA: ".$enlace;
 
 
         $mail->send();

@@ -14,8 +14,12 @@ if($metodo=='POST') {
     $contrasenya_encriptada = hash('sha512', $contrasenya);
     if(verificarToken($correo, $codigo)){
         if(recuperarContrasenya($correo, $contrasenya_encriptada)){
-            echo ("contraseña cambiada");
-            header("location: ../../ux/index.php");
+            echo '
+            <script>
+                alert("CONTRASEÑA CAMBIADA!!");
+                window.location = "../ux/index.php";
+            </script>';
+            header("location: ../ux/index.php");
 
         }
     }

@@ -15,7 +15,7 @@ include 'ConexionABBDD.php';
 function GuardarMedicionBBDD($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud)
 {
     //Insertamos en la bbdd y comrpbamos si se guarda
-    $sql = "INSERT INTO `medida` (`idSensor`, `valorMedicion`, `momentoMedicion`, `latitud`, `longitud`) VALUES ('$idSensor', '$valorMedicion', '$momentoMedicion', '$latitud', '$longitud')";
+    $sql = "INSERT INTO `medida2` (`idSensor`, `valorMedicion`, `momentoMedicion`, `latitud`, `longitud`) VALUES ('$idSensor', '$valorMedicion', '$momentoMedicion', '$latitud', '$longitud')";
     if (mysqli_query(Conectar(), $sql)) {
 
         return true;
@@ -148,7 +148,7 @@ function cambiarContrasenyaBBDD($correo,$contrasenya, $nuevaContrasenya){
 
     //$sql = "UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
     //return mysqli_query(Conectar(),$sql);
-    $sql ="UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."' AND `contrasenya`='".$contrasenya."'";
+    $sql ="UPDATE `usuario` SET `contrasenya` = '".$nuevaContrasenya."' WHERE `correo`='".$correo."'"; /*."' AND `contrasenya`='".$contrasenya."'"*/;
     if (mysqli_query(Conectar(), $sql)) {
         echo "cambiarCOntrasenyaBBDD funcionaa ";
         return mysqli_query(Conectar(),$sql);
@@ -329,6 +329,16 @@ function insertarCodigoBBDD($correo,$codigo){
     if (mysqli_query(Conectar(), $sql)) {
         return true;
 
+    } else {
+        return false;
+    }
+}
+
+
+function disponeSensorBBDD($correo){
+    $sql = "SELECT * FROM sensor WHERE idUsuario='$correo'";
+    if (mysqli_query(Conectar(), $sql)) {
+        return mysqli_query(Conectar(),$sql);
     } else {
         return false;
     }

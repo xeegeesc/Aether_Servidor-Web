@@ -13,12 +13,13 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 //comprobamos que el método sea POST
 if($metodo=='POST') {
     $nombre = $_POST['nombre'];
+    $nombreSinEspacios = str_replace(' ', '-', $nombre);
     $correo = $_POST['correo'];
     $contrasenya = $_POST['contrasenya'];
     $contrasenya_encriptada = hash('sha512',$contrasenya);
 
     //$codigo= 8888;
-    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuarioWeb.php?nombre=".$nombre."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
+    $enlace="https://jmarzoz.upv.edu.es/src/ux/verificarRegistroUsuarioWeb.php?nombre=".$nombreSinEspacios."&correo=".$correo."&contrasenya=".$contrasenya_encriptada;
 
     try {
         //Server settings

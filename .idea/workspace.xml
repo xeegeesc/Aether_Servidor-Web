@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,18 +36,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica",
+    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica/RC",
+    "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica\RC" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ServidorLogica" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ux" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
-      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
@@ -127,7 +129,9 @@
       <workItem from="1669374004076" duration="829000" />
       <workItem from="1670604772342" duration="6720000" />
       <workItem from="1670841072124" duration="3765000" />
-      <workItem from="1670950715294" duration="3641000" />
+      <workItem from="1670950715294" duration="3892000" />
+      <workItem from="1671121795231" duration="2927000" />
+      <workItem from="1671128342081" duration="14111000" />
     </task>
     <servers />
   </component>

@@ -110,7 +110,7 @@
                         <label for="chek__privacidad" style="font-size: small">Acepto la</label>
                         <a href="#politica" class="texto_link" id="btn__politica">política de privacidad</a>
                         <label style="font-size: small;">de la empresa</label><br>
-                        <button>Registrarse</button>
+                        <button onclick="alert('SE HA ENVIADO UN EMAIL A TU DIRECCIÓN DE CORREO ELECTRÓNICO');">Registrarse</button>
                     </form>
                 </div>
             </div>

@@ -298,11 +298,30 @@ body{
     box-shadow: 4px 4px rgba(0, 0, 0, 40%);
 }
 
-.btn-solicitar:hover{
+
+
+.form_verificar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn-verificar{
+    margin-top: 300px;
+    width: 220px;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 10px 40px;
+    background: #e18407;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.btn-verificar:hover{
     background: #ffab00;
 
 }
-
 /*QUIENES SOMOS*/
 .pestanya_quienes-somos{
     margin-top: 80px;

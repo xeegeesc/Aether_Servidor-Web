@@ -426,3 +426,35 @@ function insertarCodigo($correo, $codigo)
     }else{
         return false;}
 }
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * disponeSensor() es una función que inserta el codigo recibido en el correo de verificacion en la BBDD.
+ *
+ * @param correo email que debe pertenecer al usario de la BBDD.
+ * @param codigo codigo recibido en el correo de verificación.
+
+ * @returns Devuelve true si se ha insertado la conbinacion correo-codigo en la BBDD, si no se ha podido encontrar o ha habido algun error
+ * la funcion devolverá false.
+ */
+//------------------------------------------------------------------------------------------
+function disponeSensor($correo){
+    if(disponeSensorBBDD($correo)){
+
+            $datosSensor = disponeSensorBBDD($correo);
+
+        $i = 0;
+        while ($fila = mysqli_fetch_array($datosSensor)) {
+            $i++;
+        }
+        if($i!=0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }else{
+        return null;
+    }
+}

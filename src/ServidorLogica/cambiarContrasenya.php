@@ -9,7 +9,11 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 if($metodo=='POST') {
 $correo=$_POST['correo'];
 $contrasenya=$_POST['contrasenya'];
+$contrasenyaEncriptada = hash('sha512', $contrasenya);
+
 $nuevaContrasenya=$_POST['nuevaContrasenya'];
+$nuevaContrasenyaEncriptada = hash('sha512', $nuevaContrasenya);
+
 
 //------------------------------------------------------------------------------------------
     /*
@@ -23,8 +27,14 @@ $nuevaContrasenya=$_POST['nuevaContrasenya'];
      * la funcion devolverá false.
      */
 //------------------------------------------------------------------------------------------
-    if(cambiarContrasenya($correo, $contrasenya, $nuevaContrasenya)){
-        echo ("contraseña cambiada");
+    if(cambiarContrasenya($correo, $contrasenyaEncriptada, $nuevaContrasenyaEncriptada)){
+        echo '
+            <script>
+                alert("CONTRASEÑA CAMBIADA!!");
+                window.location = "../ux/index.php";
+            </script>
+        ';
+
     }
 }
 

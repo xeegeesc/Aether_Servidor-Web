@@ -1,7 +1,7 @@
 <?php
 
 
-include "../enviarCorreoCambioContrasenya.php";
+include "../enviarCorreoRecuperarAPP.php";
 
 
 $correcto=true;
@@ -46,21 +46,17 @@ $codigo=$vars['codigo'] ;
     <div class= "container">
         <div class="row justify-content-md-center" style="margin-top:200px">
         <?php if($correcto){ ?>
-        <form class="col-3" action="../cambiarContrasenya.php" method="POST">
+        <form class="col-3" action="../recuperarContrasenya.php" method="POST">
             <h2>Restablecer contraseña</h2>
 
             <div class="mb-3">
+
                 <input type="hidden" class="form-control" id="c" name="codigo" value="<?php echo $vars['codigo'] ?>">
             </div>
 
             <div class="mb-3">
-                <label for="c" class="form-label"> Antigua contraseña</label>
-                <input type="password" class="form-control" id="c" name="contrasenya">
-            </div>
-
-            <div class="mb-3">
                 <label for="c" class="form-label"> Nueva contraseña</label>
-                <input type="password" class="form-control" id="c" name="nuevaContrasenya">
+                <input type="password" class="form-control" id="c" name="contrasenya">
             </div>
 
             <div class="mb-3">

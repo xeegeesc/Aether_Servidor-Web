@@ -22,7 +22,7 @@ if($metodo=='POST') {
 
     $codigo= rand(1000,9999);
     //$codigo= 8888;
-    $enlace="https://jmarzoz.upv.edu.es/src/ServidorLogica/cambiarContrasenya.php?correo=".$correo."&contrasenya=".$contrasenya_encriptada."&nuevaContrasenya=".$nuevaContrasenyaEncriptada;
+    $enlace="https://jmarzoz.upv.edu.es/src/ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo;
 
     $_POST['codigo']=$codigo;
     try {
@@ -44,15 +44,21 @@ if($metodo=='POST') {
         //Contenido del Correo
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'AETHER - Solicitud de Cambio de contraseña';
-        $mail->Body = "Entre en el siguiente enlace para CAMBIAR SU CONTRASEÑA: ".$enlace;
+        $mail->AddEmbeddedImage('../ux/assets/images/logo.png','Imagen Logo Aether','file/logo.png','base64','image/png');
+        $mail->AddEmbeddedImage('../ux/assets/images/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','Imagen Logo Ministerio','file/1280px-Logotipo_del_Ministerio_de_Sanidad,_Consumo_y_Bienestar_Social.svg.png','base64','image/png');
+
+        $mail->Body = "Entre en el siguiente enlace para CAMBIAR SU CONTRASEÑA: <br>".$enlace;
 
         $mail->send();
-        echo 'Se ha enviado correctamente';
+        echo '<script>
+                alert("SE HA ENVIADO UN EMAIL A TU DIRECCIÓN DE CORREO ELECTRÓNICO");
+                
+            </script>';
         insertarCodigo($correo, $codigo);
 
 
 
-        header("location: ../ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo);
+        //header("location: ../ServidorLogica/RC/verificartoken.php?correo=".$correo."&codigo=".$codigo);
 
     } catch (Exception $e) {
         echo "Ha habido un error al enviar el correo. Mailer Error: {$mail->ErrorInfo}";
