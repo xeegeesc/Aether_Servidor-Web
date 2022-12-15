@@ -20,7 +20,10 @@
     <title>Aether Technologies</title>
     <link rel="stylesheet" href="assets/css/estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="librerias/jquery-3.6.2.min.js"></script>
+    <script src="librerias/plotly-2.16.1.min.js"></script>
 
+    <!--  <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css"> -->
     <script src="http://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 <body id="body_landing">
@@ -250,6 +253,9 @@
                             <div class="body__card_front_V2">
                                 <i id="mi_dispositivo_i4" class="fa-solid fa-circle-info"></i>
                                 <h1>Últimas medidas de calidad del aire</h1>
+                                <div id="contenedor_grafica">
+
+                                </div>
                             </div>
                         </div>
                         <div class="card__back_V2">
@@ -422,6 +428,12 @@
         <p id="copiright">© 2022 Aether Technologies. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#contenedor_grafica').load('assets/graficas/grafica_lineal.php');
+    });
+</script>
 
 <script src="assets/js/script_usuario.js"></script>
 </body>

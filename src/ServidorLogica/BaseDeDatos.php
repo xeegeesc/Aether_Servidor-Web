@@ -37,7 +37,7 @@ function GuardarMedicionBBDD($idSensor,$valorMedicion,$momentoMedicion, $latitud
 
 function obtenerMedicionesBBDD(){
     //obtenemos lo que necesitamos de la tabla medida
-    $sql = "SELECT * FROM `medida`";
+    $sql = "SELECT * FROM `medida2`";
     return mysqli_query(Conectar(),$sql);
 
 }//obtenerMedicionesBBDD
@@ -54,7 +54,7 @@ function obtenerMedicionesBBDD(){
 //------------------------------------------------------------------------------------------
 function obtenerUltimaMedicionBBDD(){
     //obtenemos solo el ultimo valor de la tabla para ver el ultimo
-    $sql = "SELECT * FROM `medida` WHERE `momentoMedicion` = (SELECT MAX(`momentoMedicion`) FROM `medida`)";
+    $sql = "SELECT * FROM `medida2` WHERE `momentoMedicion` = (SELECT MAX(`momentoMedicion`) FROM `medida2`)";
     return mysqli_query(Conectar(),$sql);
 }//obtenerUltimaMedicionBBDD()
 
@@ -343,3 +343,62 @@ function disponeSensorBBDD($correo){
         return false;
     }
 }
+
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerTActivoBBDD() es una función obtiene los usuarios activos guardados en la BBDD.
+ *
+ * @param tiene como parametro de entrada a un usuario.
+ *
+ * @returns devuelve un JSON con el tiempo que los usuarios están activos en la BBDD.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerTActivoBBDD($idSensor){
+    //obtenemos solo el ultimo valor de la tabla para ver el ultimo
+    $sql = "SELECT 'TActivo' FROM `estadousuario` WHERE `idSensor` = $idSensor)";
+    return mysqli_query(Conectar(),$sql);
+}//obtenerTActivoBBDD()
+
+//------------------------------------------------------------------------------------------
+/*
+ * insertarTActivosBBDD() es una función que inserta el tiempo que lleva activo un sensor
+ *
+ * @param no tiene como parametros de entrada
+ *
+ * @returns devuelve un JSON con la ultima medicion registrada en la BBDD.
+ */
+//------------------------------------------------------------------------------------------
+function insertarTActivoBDD($idSensor, $TActivo){
+    $sql="insert into estadousuario (idSensor,TActivo) values('$idSensor','$TActivo')";
+    return mysqli_query(Conectar(),$sql);
+}//insertarTActivoBDD()
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerTActivoBBDD() es una función obtiene los usuarios activos guardados en la BBDD.
+ *
+ * @param tiene como parametro de entrada a un usuario.
+ *
+ * @returns devuelve un JSON con el tiempo que los usuarios están activos en la BBDD.
+ */
+//------------------------------------------------------------------------------------------
+function obtenerDistRecorridaBBDD($idSensor){
+
+    $sql = "SELECT 'DistRecorrida' FROM `estadousuario` WHERE `idSensor` = $idSensor)";
+    return mysqli_query(Conectar(),$sql);
+}//obtenerDistRecorridoBBDD()
+
+//------------------------------------------------------------------------------------------
+/*
+ * insertarTActivosBBDD() es una función que inserta el tiempo que lleva activo un sensor
+ *
+ * @param no tiene como parametros de entrada
+ *
+ * @returns devuelve un JSON con la ultima medicion registrada en la BBDD.
+ */
+//------------------------------------------------------------------------------------------
+function insertarDistRecorridaBDD($idSensor, $DistRecorrida){
+    $sql="insert into estadousuario (idSensor,DistRecorrida) values('$idSensor','$DistRecorrida')";
+    return mysqli_query(Conectar(),$sql);
+}//insertarTActivoBDD()

@@ -92,7 +92,6 @@ function obtenerUltimaMedicion()
 
     }
     echo json_encode($resultado);
-    return true;
 
 }//obtenerUltimaMedicion
 

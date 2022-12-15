@@ -1196,7 +1196,16 @@ footer:hover{
 }
 
 
+/*==============Gráfica==============*/
+#contenedor_grafica{
+    height: 380px;
+}
+#graficaLineal{
+    height: 380px;
 
+}
+.plot-container plotly{
+}
 
 /*RESPONSIVE DESIGN*/
 @media screen and (max-width: 850px){
