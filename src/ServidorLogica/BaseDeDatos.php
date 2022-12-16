@@ -368,7 +368,7 @@ function obtenerTActivoBBDD($idSensor){
  * @returns devuelve un JSON con la ultima medicion registrada en la BBDD.
  */
 //------------------------------------------------------------------------------------------
-function insertarTActivoBDD($idSensor, $TActivo){
+function insertarTActivoBBDD($idSensor, $TActivo){
     $sql="insert into estadousuario (idSensor,TActivo) values('$idSensor','$TActivo')";
     return mysqli_query(Conectar(),$sql);
 }//insertarTActivoBDD()
