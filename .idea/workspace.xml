@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1c5252b-54db-4e20-bbdc-c08d176bff82" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1.12" />
+  <component name="ProjectId" id="2Grfy8Ini9c55CaZPPpPqUq6Jpq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica/RC",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica\RC" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ServidorLogica" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ux" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.LogicaDelNegocioTest">
+    <configuration name="LogicaDelNegocioTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LogicaDelNegocioTest.testCambiarContrasenya" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1.12" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Test\LogicaDelNegocioTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testCambiarContrasenya" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LogicaDelNegocioTest.testObtenerCalidadAire" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testObtenerCalidadAire" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LogicaDelNegocioTest.testObtenerDatosUsuario" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testObtenerDatosUsuario" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LogicaDelNegocioTest.testRegistrarUsuario (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test\LogicaDelNegocioTest" file="$PROJECT_DIR$/src/tests/LogicaDelNegocioTest.php" method="testRegistrarUsuario" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1.12" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner coverage_engine="PHPDBG" directory="$PROJECT_DIR$/test" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerCalidadAire" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerDatosUsuario" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario (1)" />
+      <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerCalidadAire" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testObtenerDatosUsuario" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testRegistrarUsuario (1)" />
+        <item itemvalue="PHPUnit.LogicaDelNegocioTest.testCambiarContrasenya" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1c5252b-54db-4e20-bbdc-c08d176bff82" name="Changes" comment="" />
+      <created>1667151874567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667151874567</updated>
+      <workItem from="1667151876739" duration="651000" />
+      <workItem from="1667217450032" duration="8964000" />
+      <workItem from="1667497337395" duration="6177000" />
+      <workItem from="1668532753629" duration="42000" />
+      <workItem from="1668853823673" duration="6930000" />
+      <workItem from="1669024101748" duration="666000" />
+      <workItem from="1669032470325" duration="1987000" />
+      <workItem from="1669142422540" duration="821000" />
+      <workItem from="1669198468331" duration="9086000" />
+      <workItem from="1669229682076" duration="117000" />
+      <workItem from="1669288538707" duration="26315000" />
+      <workItem from="1669374004076" duration="829000" />
+      <workItem from="1670604772342" duration="6720000" />
+      <workItem from="1670841072124" duration="3765000" />
+      <workItem from="1670950715294" duration="3892000" />
+      <workItem from="1671121795231" duration="2927000" />
+      <workItem from="1671128342081" duration="17621000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Aether_Servidor_Web@LogicaDelNegocioTest_testObtenerCalidadAire.xml" NAME="LogicaDelNegocioTest.testObtenerCalidadAire Coverage Results" MODIFIED="1669320146664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
