@@ -21,5 +21,7 @@ if($metodo=='POST') {
         }
     } else {
         echo "Error en la peticion GET. Parámetros incorrectos.";
+        header("location: ../ux/index.php");
+        exit();
     }
 }
