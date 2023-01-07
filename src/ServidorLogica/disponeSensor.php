@@ -23,4 +23,6 @@ if($metodo=='GET') {
         return null;
     }
 
+}else{
+    echo "Petición errónea, se esperaba un GET" .http_response_code(400);
 }

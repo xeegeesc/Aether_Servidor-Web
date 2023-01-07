@@ -18,26 +18,10 @@ if($metodo=='POST'){
         echo $nombre. " " .$correo;
         //encriptar contraseña
 
-        //comprobar que las 2 contraseñas coinciden
-        /*if ($contrasenya!=$confirmar_contrasenya){
-            echo'
-            <script>
-                alert("Las contraseñas no coinciden");
-                window.location = "../ux/index.php";
-                
-            </script>
-        ';
-            exit();
-        }*/
+
         //Comprobar que el correo no se repita en la base de datos
          if (comprobarCorreo($correo)){
-            /*echo '
-            <script>
-                alert("Este correo ya está registrado, intentelo con otro diferente");
-                window.location = "../ux/index.php";
-            </script>
-        ';
-            exit();*/
+
              echo false;
         }
         else{
@@ -51,4 +35,6 @@ if($metodo=='POST'){
         echo "Error en la peticion POST. Parámetros incorrectos.";
     }
 
+}else{
+    echo "Petición errónea, se esperaba un POST" .http_response_code(400);
 }

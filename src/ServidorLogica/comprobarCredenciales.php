@@ -24,4 +24,6 @@ if($metodo=='POST') {
         header("location: ../ux/index.php");
         exit();
     }
+}else{
+    echo "Petición errónea, se esperaba un POST" .http_response_code(400);
 }

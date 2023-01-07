@@ -18,6 +18,9 @@ if($metodo=='POST'){
         $longitud = $_POST["longitud"];
 
         guardarMedicion($idSensor,$valorMedicion,$momentoMedicion, $latitud, $longitud);
+    }else{
+        echo "Error en la peticion POST. Parámetros incorrectos.";
+
     }
 
 }else if($metodo=='GET'){
@@ -35,5 +38,9 @@ if($metodo=='POST'){
             //obtenemos solo la ultima medicion
             echo obtenerUltimaMedicion();
         }
+    }else{
+        echo "Error en la peticion GET. Parámetro incorrecto. Se espera parámetro 'datos'.";
     }
+}else{
+    echo "Petición errónea, se esperaba un POST para guardar medicion o un GET para obtener bediciones" .http_response_code(400);
 }

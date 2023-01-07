@@ -17,4 +17,6 @@ if($metodo=='POST') {
     } else {
         echo "Error en la peticion GET. Parámetros incorrectos.";
     }
+}else{
+    echo "Petición errónea, se esperaba un POST" .http_response_code(400);
 }

@@ -272,18 +272,24 @@ function obtenerDatosUsuario($correo)
     try{
         $datosUsuario = obtenerDatosUsuarioBBDD($correo);
 
-        $resultadoDatos = array();
-        $i = 0;
-        while ($fila = mysqli_fetch_array($datosUsuario)) {
-            $respuesta["nombre"] = $fila["nombre"];
-            $respuesta["correo"] = $fila ["correo"];
-            $respuesta["idAvatar"] = $fila ["idAvatar"];
+        if(sizeof(mysqli_fetch_array($datosUsuario))>0){
+            $resultadoDatos = array();
+            $i = 0;
+            while ($fila = mysqli_fetch_array($datosUsuario)) {
+                $respuesta["nombre"] = $fila["nombre"];
+                $respuesta["correo"] = $fila ["correo"];
+                $respuesta["idAvatar"] = $fila ["idAvatar"];
 
-            $resultadoDatos[$i] = $respuesta;
-            $i++;
+                $resultadoDatos[$i] = $respuesta;
+                $i++;
+            }
+
+            return json_encode($respuesta);
+        }else{
+            return null;
+
         }
 
-        return json_encode($respuesta);
     }catch (mysqli_sql_exception $exception){
         return $exception;
     }

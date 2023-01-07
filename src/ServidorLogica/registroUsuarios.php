@@ -65,4 +65,6 @@ if($metodo=='POST'){
         echo "Error en la peticion POST. Parámetros incorrectos.";
     }
 
+}else{
+    echo "Petición errónea, se esperaba un POST" .http_response_code(400);
 }

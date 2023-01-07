@@ -52,4 +52,7 @@ if($metodo=='POST') {
     } catch (Exception $e) {
         echo "Ha habido un error al enviar el correo. Mailer Error: {$mail->ErrorInfo}";
     }
+}else{
+    echo "Error en la peticion. Se esperaba un POST.".http_response_code(400);
+
 }

@@ -15,4 +15,6 @@ if($metodo=='GET') {
         echo "Parametro del GET incorrecto, Introduzca la idSensor objetivo";
     }
 
+}else{
+    echo "Petición errónea, se esperaba un GET" .http_response_code(400);
 }

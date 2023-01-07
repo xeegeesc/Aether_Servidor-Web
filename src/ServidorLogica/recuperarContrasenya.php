@@ -25,4 +25,6 @@ if($metodo=='POST') {
     }
 
 
+}else{
+    echo "Petición errónea, se esperaba un POST" .http_response_code(400);
 }
