@@ -43,9 +43,23 @@
     var data = [trace1, trace2];
 
 
+ var layout = {
+        autosize: true,
+        margin: {
+            l: 0,
+            r: 0,
+            b: 0,
+            t: 0,
+            pad: 0
+        },
+        paper_bgcolor: 'rgba(255,255,255,0)',
+        plot_bgcolor: 'rgba(255,255,255,0)',
+        showlegend: false
+    };
 
 
-    Plotly.newPlot('graficaLineal', data);
+    Plotly.newPlot('graficaLineal', data, layout);
+
 
 
 </script>

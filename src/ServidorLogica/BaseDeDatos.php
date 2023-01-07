@@ -60,6 +60,21 @@ function obtenerUltimaMedicionBBDD(){
 
 //------------------------------------------------------------------------------------------
 /*
+ * solicitarDatosBBDD() es una función que solicita y obtiene los valores de una distancia recorrida por un usuario de la BBDD.
+ *
+ *
+ * @param idSensor ID del sensor que ha realizado la medición.
+ *
+ *
+ * @returns Devuelve el valor de la distancia recorrida por el usuario.
+ */
+//------------------------------------------------------------------------------------------
+function solicitarDatosBBDD(){
+    $sql= 'SELECT * FROM medida2';
+    return mysqli_query(Conectar(),$sql);
+}
+//------------------------------------------------------------------------------------------
+/*
  * registrarUsuarioBBDD() es una función que crea un usuario en la BBDD guardando el nombre, el correo y su contraseña.
  * La funcion comprueba que no existan ya ese correo y contraseña en la BBDD.
  *

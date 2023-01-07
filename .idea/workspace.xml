@@ -30,25 +30,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/vstudiorepos/ProyectoTriosTIG&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/vstudiorepos/Aether_Servidor-Web/src/ServidorLogica",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica\RC" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src" />
+      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ServidorLogica\RC" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ServidorLogica" />
       <recent name="D:\vstudiorepos\Aether_Servidor-Web - CopiaSeguridad\src\ux" />
-      <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\vstudiorepos\Aether_Servidor-Web\src\ux" />
@@ -133,7 +133,7 @@
       <workItem from="1671121795231" duration="2927000" />
       <workItem from="1671128342081" duration="17621000" />
       <workItem from="1672230282431" duration="4701000" />
-      <workItem from="1672912399443" duration="7383000" />
+      <workItem from="1672912399443" duration="8369000" />
     </task>
     <servers />
   </component>

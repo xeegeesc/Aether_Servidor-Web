@@ -503,13 +503,13 @@ function obtenerTActivo($idSensor)
 
 //------------------------------------------------------------------------------------------
 /*
- * guardarMedición() es una función que guarda los valores de una medición realizada en la BBDD.
+ * guardarDistRecorrida() es una función que guarda los valores de una distancia recorrida por un usuario en la BBDD.
  *
- * @param instante instante en el que se ha tomado la medición.
+ *
  * @param idSensor ID del sensor que ha realizado la medición.
- * @param valor valor de O3 captado en la medición.
+ * @param DistRecorrida valor de distancia en la medición.
  *
- * @returns No devuelve nada.
+ * @returns Devuelve true si se ha podido guardar en la BBDD.
  */
 //------------------------------------------------------------------------------------------
 
@@ -525,8 +525,19 @@ function guardarDistRecorrida($idSensor, $DistRecorrida)
         die();
     }
 
-}//guardarMedicion()
+}//guardarDistRecorrida()
 
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerDistRecorrida() es una función que obtiene los valores de una distancia recorrida por un usuario de la BBDD.
+ *
+ *
+ * @param idSensor ID del sensor que ha realizado la medición.
+ *
+ *
+ * @returns Devuelve el valor de la distancia recorrida por el usuario.
+ */
+//------------------------------------------------------------------------------------------
 function obtenerDistRecorrida($idSensor)
 {
     //llamamos a la funcion para obtener el tiempo que ha estado activo el sensor
@@ -535,3 +546,29 @@ function obtenerDistRecorrida($idSensor)
 
     return $DistRecorrida;
 }//obtenerTActivoBBDD()
+
+
+//------------------------------------------------------------------------------------------
+/*
+ * solicitarDatos() es una función que solicita y obtiene los valores de una distancia recorrida por un usuario de la BBDD.
+ *
+ *
+ * @param idSensor ID del sensor que ha realizado la medición.
+ *
+ *
+ * @returns Devuelve el valor de la distancia recorrida por el usuario.
+ */
+//------------------------------------------------------------------------------------------
+
+function solicitarDatos(){
+
+    try{
+
+        $resultadoMysql = solicitarDatosBBDD();
+
+        return $resultadoMysql;
+    }catch (mysqli_sql_exception $exception){
+        return $exception;
+    }
+
+}

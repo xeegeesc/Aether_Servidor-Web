@@ -1,0 +1,181 @@
+body{
+    background-image: none;
+    background-color: #e0e5ea;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    margin: 80px 20px 10px 20px;
+}
+
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 100%;
+
+
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+.content-table thead tr {
+    background-color: #032a52;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #5694d3;
+}
+
+
+.ico__orden_down{
+    *background-image: url("../iconos/square-caret-down-solid.svg");
+    *background-size: 90%;
+    background: #a2cfff center no-repeat;
+    -webkit-mask-image: url("../iconos/square-caret-down-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("../iconos/square-caret-down-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    transition: all 100ms;
+    width: 20px;
+    height: 22px;
+    margin-left: 10px;
+}
+.ico__orden_down:hover{
+    background: #60a9ff bottom no-repeat;
+    cursor: pointer;
+}
+
+.ico__orden_up{
+    *background-image: url("../iconos/square-caret-up-solid.svg");
+    *background-size: 90%;
+    background: #a2cfff center no-repeat;
+    -webkit-mask-image: url("../iconos/square-caret-up-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("../iconos/square-caret-up-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    transition: all 100ms;
+    width: 20px;
+    height: 22px;
+    margin-left: 10px;
+}
+.ico__orden_up:hover{
+    background: #60a9ff bottom no-repeat;
+    cursor: pointer;
+}
+
+
+.ico__orden_down_selected{
+    *background-image: url("../iconos/square-caret-down-solid.svg");
+    *background-size: 90%;
+    background: #ffab00 center no-repeat;
+    -webkit-mask-image: url("../iconos/square-caret-down-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("../iconos/square-caret-down-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    transition: all 100ms;
+    width: 20px;
+    height: 22px;
+    margin-left: 10px;
+}
+.ico__orden_down_selected:hover {
+    background: #ffd500 bottom no-repeat;
+    cursor: pointer;
+}
+
+.ico__orden_up_selected{
+    *background-image: url("../iconos/square-caret-up-solid.svg");
+    *background-size: 90%;
+    background: #ffab00 center no-repeat;
+    -webkit-mask-image: url("../iconos/square-caret-up-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("../iconos/square-caret-up-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    transition: all 100ms;
+    width: 20px;
+    height: 22px;
+    margin-left: 10px;
+}
+.ico__orden_up_selected:hover {
+    background: #ffd500 bottom no-repeat;
+    cursor: pointer;
+}
+
+
+#tabla_vdown{
+    display: none;
+}
+#tabla_vup{
+    display: none;
+}
+#tabla_fdown{
+    display: contents;
+}
+#tabla_fup{
+    display: none;
+}
+#tabla_edown{
+    display: none;
+}
+#tabla_eup{
+    display: none;
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+
+    .ico__orden_down{
+        width: 30px;
+        height: 40px;
+    }
+    .ico__orden_up{
+        width: 30px;
+        height: 40px;
+    }
+
+    .ico__orden_down_selected {
+        width: 30px;
+        height: 40px;
+    }
+    .ico__orden_up_selected {
+        width: 30px;
+        height: 40px;
+    }
+
+}
