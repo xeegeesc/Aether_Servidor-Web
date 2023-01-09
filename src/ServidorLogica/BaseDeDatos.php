@@ -60,13 +60,13 @@ function obtenerUltimaMedicionBBDD(){
 
 //------------------------------------------------------------------------------------------
 /*
- * solicitarDatosBBDD() es una función que solicita y obtiene los valores de una distancia recorrida por un usuario de la BBDD.
+ * solicitarDatosBBDD() es una función que solicita y obtiene los datos de los sensores en la BBDD.
  *
  *
- * @param idSensor ID del sensor que ha realizado la medición.
+ * @param no tiene parametros de entrada.
  *
  *
- * @returns Devuelve el valor de la distancia recorrida por el usuario.
+ * @returns Devuelve todos los datos recabados por los sensores guardados en la BBDD.
  */
 //------------------------------------------------------------------------------------------
 function solicitarDatosBBDD(){

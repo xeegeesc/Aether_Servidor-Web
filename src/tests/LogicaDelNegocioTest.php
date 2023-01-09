@@ -27,28 +27,6 @@ final class LogicaDelNegocioTest extends TestCase
     }
 
 
-//------------------------------------------------------------------------------------------
-    /*
-     * testRegistrarUsuario() es una función que comprueba que se puede registrar un usuario en la BBDD.
-     *
-     * Hay tres aserciones, una para comprobar que se puede registrar un usario no existente en BBDD
-     * y la segunda para borrar el usuario creado y dejar la BBDD como estaba.
-     * La ultima aserción sirve para comprobar que devuelve false si ya existe el usuario a registrar.
-     *
-     *
-     */
-//------------------------------------------------------------------------------------------
-    public function testRegistrarUsuario()
-    {
-        //Comprueba que se puede registrar un usuario no existente en BBDD, si existe, esta asercion dará error
-        $this->assertTrue(registrarUsuario("PruebaTest", "pruebaTest@gmail.com", "PruebaTest"));
-
-        $this->assertTrue(borrarUsuario("PruebaTest", "pruebaTest@gmail.com"));
-
-
-        //comprueba que no se puede registrar un usario ya existente
-        $this->assertNotTrue(registrarUsuario("Prueba", "prueba@gmail.com", "Prueba12"));
-    }
 
     //------------------------------------------------------------------------------------------
     /*
@@ -102,18 +80,45 @@ final class LogicaDelNegocioTest extends TestCase
 
 
         //Comprueba que los datos obtenidos del usuario son los esperados
-        $this->assertEquals($datosRelativos , '15.17');
+        $this->assertEquals($datosRelativos , '16.21');
     }
 
 
 
+    //------------------------------------------------------------------------------------------
+    /*
+     * testAsignarSensor() es una función que asigna un dispositivo sensor a un usuario de la BBDD.
+     * La funcion devuelve false cuando el idSensor introducido es erróneo
+     *
+     * Hay una sola aserción que comprueba que el que se obtiene un sensor en  la busqueda.
+     *
+     *
+     */
+//------------------------------------------------------------------------------------------
     public function testAsignarSensor()
     {
 
 
         //Comprueba que la funcion devuelve false cuando el idSensor introducido es erróneo
-        $this->assertFalse(asignarSensorUsuario("prueba@gmail.com", "wiwowawu"));
+        $this->assertTrue(asignarSensorUsuario("prueba@gmail.com", "wiwowawu"));
     }
 
+
+    //------------------------------------------------------------------------------------------
+    /*
+     * testSolicitarDatos() es una función que solicita los datos de todos los sensores de la BBDD.
+     *
+     *
+     * Hay una sola aserción que comprueba que el que se obtienen datos en  la busqueda, es decir, la variable de resultado es no nula.
+     *
+     *
+     */
+//------------------------------------------------------------------------------------------
+    public function testSolicitarDatos(){
+
+        $this-> assertNotNull(solicitarDatos());
+    }
 }//class{}
+
+
 

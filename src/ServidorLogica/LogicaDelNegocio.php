@@ -272,9 +272,12 @@ function obtenerDatosUsuario($correo)
     try{
         $datosUsuario = obtenerDatosUsuarioBBDD($correo);
 
-        if(sizeof(mysqli_fetch_array($datosUsuario))>0){
+       // if(sizeof(mysqli_fetch_array($datosUsuario))>0){
             $resultadoDatos = array();
             $i = 0;
+            //$respuesta = 0;
+            echo "pasa el if!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
             while ($fila = mysqli_fetch_array($datosUsuario)) {
                 $respuesta["nombre"] = $fila["nombre"];
                 $respuesta["correo"] = $fila ["correo"];
@@ -282,13 +285,14 @@ function obtenerDatosUsuario($correo)
 
                 $resultadoDatos[$i] = $respuesta;
                 $i++;
+                echo "pasa el bucle";
             }
 
             return json_encode($respuesta);
-        }else{
+        /*}else{
             return null;
 
-        }
+        }*/
 
     }catch (mysqli_sql_exception $exception){
         return $exception;
@@ -550,13 +554,13 @@ function obtenerDistRecorrida($idSensor)
 
 //------------------------------------------------------------------------------------------
 /*
- * solicitarDatos() es una función que solicita y obtiene los valores de una distancia recorrida por un usuario de la BBDD.
+ * solicitarDatos() es una función que solicita y obtiene los datos de los sensores en la BBDD.
  *
  *
- * @param idSensor ID del sensor que ha realizado la medición.
+ * @param no tiene parametros de entrada.
  *
  *
- * @returns Devuelve el valor de la distancia recorrida por el usuario.
+ * @returns Devuelve todos los datos recabados por los sensores guardados en la BBDD.
  */
 //------------------------------------------------------------------------------------------
 
