@@ -1,6 +1,7 @@
 <?php
-/*
+
      session_start();
+     
     if (!isset($_SESSION['usuario'])){
         echo '
             <script>
@@ -10,7 +11,7 @@
         ';
         session_destroy();
         die();
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +19,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Aether Technologies</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
     <link rel="stylesheet" href="assets/css/estilos.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="librerias/jquery-3.6.2.min.js"></script>
     <script src="librerias/plotly-2.16.1.min.js"></script>
 
     <!--  <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css"> -->
     <script src="http://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <!--  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script> -->
 </head>
 <body id="body_landing">
 <header>
@@ -39,6 +51,8 @@
                     <li id="header__mi_dispositivo-sub" class="header__menu-selected"><div class="ico__home"></div><a href="#" id="header__mi_dispositivo_txt" class="text-menu-selected"> MI DISPOSITIVO</a></li>
                     <li id="header__contactanos-sub"><div class="ico__quienes_somos"></div><a href="#" id="header__contactanos_txt"> CONTÁCTANOS</a></li>
                     <li id="header__mapa-sub"><div class="ico__mapa"></div><a href="#" id="header__mapa_txt"> MAPA</a></li>
+                    <li id="header__mapaEstaciones-sub"><div class="ico__mapaEstaciones"></div><a href="#" id="header__mapaEstaciones_txt"> MAPA ESTACIONES OFICIALES</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -416,10 +430,102 @@
         <div class="pestanya_mapa">
             <a class="btn__Mapa-controlador_zi">+</a>
             <a class="btn__Mapa-controlador_zo">-</a>
-            <div class="mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.847706971145!2d-0.16974775620510024!3d38.9959719791882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61c2a3069621fd%3A0xdb8ad87b84df4b24!2sUPV%20Campus%20de%20Gandia%20-%20Escuela%20Politecnica%20Superior!5e0!3m2!1ses!2ses!4v1668900142120!5m2!1ses!2ses" width="100%" height="740" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+            <?php
+            include '../ServidorLogica/LogicaDelNegocio.php';
+             $correoUsuario = $_SESSION['usuario'];
+             //echo $correoUsuario;
+            //$correoUsuario = "prueba@gmail.com";
+           /* $idSensor = cualMiSensor($correoUsuario);
+             $datosSensor = obtenerMediciones24Horas($idSensor);
+            echo $datosSensor;*/
+            ?>
+
+            <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+            <script src="../ux/assets/js/leaflet-idw.js"></script>
+            <div id="map"></div>
+
+          <script>
+            fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/cualMiSensor.php?correo="+"<?php echo $correoUsuario ?>").then(function(response) {
+  return response.json();
+}).then(function(idSensor) {
+    fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/mediciones24Horas.php?idSensor="+idSensor).then(function(response) {
+  return response.json();
+}).then(function(medicionesJson) {
+  var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                  {
+                      attribution: false
+                  });
+
+              var data = [];
+
+              var datosJson = medicionesJson;
+
+              //alert(datosJson[0]["valorMedicion"]/120);
+              datosJson.forEach(function (j) {
+                  data.push([j["latitud"], j["longitud"], j["valorMedicion"]/120])
+              })
+
+
+              var map = L.map('map',
+                  {
+                      zoomControl: true,
+                      layers: [tileLayer],
+                      maxZoom: 18,
+                      minZoom: 6
+                  })
+                  .setView([38.99579, -0.16515], 15);
+
+            //function crearMapaCalor(){
+                var idw =  L.idwLayer(data, {
+                  //Opciones
+                  opacity:0.9,
+                  maxZoom: 18,
+                  cellSize: 2,
+                  exp: 4,
+                  max:20,
+                 gradient:{
+                      0.0: "lightblue",
+                      0.01: "blue",
+                      0.02:"green",
+                      0.04: "orange",
+                      0.07: "red",
+                      0.1: "#ffffff"
+                  }
+              }).addTo(map);
+            
+           
+             
+
+}).catch(function(err) {
+  console.log('Error en la Peticion GET mediciones24horas', err);
+});
+}).catch(function(err) {
+  console.log('Error en la Peticion GET cualMiSensor', err);
+});
+              
+                //----------------------------------------------------------------------------------------------------------
+                /*
+                *
+                * Según el Artículo 19, Anexo I - "Valores objetivo y objetivos a largo plazo para el ozono":
+                * La Máxima diaria de las medias móviles octohorarias en un año civil es de: 120 µg/m3.
+                * Lo cual quiere decir que la media máxima que se puede dar en un día es de 120 µg/m3.
+                *
+                *https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/atmosfera-y-calidad-del-aire/calidad-del-aire/evaluacion-datos/eval/
+                *
+                */
+                //----------------------------------------------------------------------------------------------------------
+
+
+            </script>
         </div>
+
+    <div class="pestanya_mapaEstaciones">
+        <a class="btn__Mapa-controlador_zi">+</a>
+        <a class="btn__Mapa-controlador_zo">-</a>
+
+            <embed class="mapaEnSi" src="./assets/images/Mapa_EstacionesOficiales.html" type="text/html" width="85%" height="600px">
+
+    </div>
     </div>
 </div>
 

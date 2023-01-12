@@ -98,7 +98,6 @@ final class LogicaDelNegocioTest extends TestCase
     public function testAsignarSensor()
     {
 
-
         //Comprueba que la funcion devuelve false cuando el idSensor introducido es erróneo
         $this->assertTrue(asignarSensorUsuario("prueba@gmail.com", "wiwowawu"));
     }

@@ -58,6 +58,8 @@ var username = document.getElementById("inp_edit_nombre").value;
 
 document.getElementById("header__contactanos_txt").addEventListener("click", seccionContactanos);
 document.getElementById("header__mapa_txt").addEventListener("click", seccionMapa);
+document.getElementById("header__mapaEstaciones_txt").addEventListener("click", seccionMapaEstaciones);
+
 document.getElementById("footer__log_contacta").addEventListener("click", seccionContactanos);
 document.getElementById("footer__log_mapa").addEventListener("click", seccionMapa);
 
@@ -65,6 +67,8 @@ var sec_mi_dispositivo = document.querySelector(".pestanya__mi_dispositivo");
 var sec_sin_dispositivo = document.querySelector(".pestanya__sin_mi_dispositivo");
 var sec_contactanos = document.querySelector(".pestanya_contactanos");
 var sec_mapa = document.querySelector(".pestanya_mapa");
+var sec_mapaEstaciones = document.querySelector(".pestanya_mapaEstaciones");
+
 var sec_acerca_de = document.querySelector(".pestanya_acerca_de");
 
 /*========== Footer ==========*/
@@ -154,15 +158,18 @@ function seccionMiDispositivo(){
     document.getElementById("header__mi_dispositivo_txt").className = "text-menu-selected";
     document.getElementById("header__contactanos_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
+    document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__mi_dispositivo-sub").className = "header__menu-selected";
     document.getElementById("header__contactanos-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
+    document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_mi_dispositivo.style.display="flex";
     sec_sin_dispositivo.style.display="none";
     sec_contactanos.style.display="none";
     sec_mapa.style.display="none";
+    sec_mapaEstaciones.style.display="none";
     footer_sin_sesion.style.marginTop="100px";
     sec_acerca_de.style.display="none";
 
@@ -180,15 +187,19 @@ function seccionSinDispositivo(){
     document.getElementById("header__mi_dispositivo_txt").className = "text-menu-selected";
     document.getElementById("header__contactanos_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
+    document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__mi_dispositivo-sub").className = "header__menu-selected";
     document.getElementById("header__contactanos-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
+    document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_mi_dispositivo.style.display="none";
     sec_sin_dispositivo.style.display="flex";
     sec_contactanos.style.display="none";
     sec_mapa.style.display="none";
+    sec_mapaEstaciones.style.display="none";
+
     sec_acerca_de.style.display="none";
     footer_sin_sesion.style.marginTop="100px";
 
@@ -207,15 +218,19 @@ function seccionContactanos(){
     document.getElementById("header__mi_dispositivo_txt").className = null;
     document.getElementById("header__contactanos_txt").className = "text-menu-selected";
     document.getElementById("header__mapa_txt").className = null;
+    document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__mi_dispositivo-sub").className = null;
     document.getElementById("header__contactanos-sub").className = "header__menu-selected";
     document.getElementById("header__mapa-sub").className = null;
+    document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_mi_dispositivo.style.display="none";
     sec_sin_dispositivo.style.display="none";
     sec_contactanos.style.display="block";
     sec_mapa.style.display="none";
+    sec_mapaEstaciones.style.display="none";
+
     sec_acerca_de.style.display="none";
     footer_sin_sesion.style.marginTop="100px";
 
@@ -232,15 +247,19 @@ function seccionAcercaDe(){
     document.getElementById("header__mi_dispositivo_txt").className = null;
     document.getElementById("header__contactanos_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
+    document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__mi_dispositivo-sub").className = null;
     document.getElementById("header__contactanos-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
+    document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_mi_dispositivo.style.display="none";
     sec_sin_dispositivo.style.display="none";
     sec_contactanos.style.display="none";
     sec_mapa.style.display="none";
+    sec_mapaEstaciones.style.display="none";
+
     sec_acerca_de.style.display="flex";
 
     footer_sin_sesion.style.marginTop="100px";
@@ -259,20 +278,58 @@ function seccionMapa(){
     document.getElementById("header__mi_dispositivo_txt").className = null;
     document.getElementById("header__contactanos_txt").className = null;
     document.getElementById("header__mapa_txt").className = "text-menu-selected";
+    document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__mi_dispositivo-sub").className = null;
     document.getElementById("header__contactanos-sub").className = null;
     document.getElementById("header__mapa-sub").className = "header__menu-selected";
+    document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_mi_dispositivo.style.display="none";
     sec_sin_dispositivo.style.display="none";
     sec_contactanos.style.display="none";
     sec_mapa.style.display="block";
+    sec_mapaEstaciones.style.display="none";
+
     sec_acerca_de.style.display="none";
-    footer_sin_sesion.style.marginTop="-100px";
+    footer_sin_sesion.style.marginTop="-150px";
 
     color_fondo.style.backgroundImage = "none";
-    color_fondo.style.backgroundColor = "#d6d6d7";
+    color_fondo.style.backgroundColor = "rgba(98,204,218,0.78)";
+
+    scrollArriba();
+    cerrarMenu();
+    comprobar_open_close();
+
+
+}//()
+
+//seccionMapaEstaciones()
+function seccionMapaEstaciones(){
+    document.getElementById("header__mi_dispositivo_txt").className = null;
+    document.getElementById("header__contactanos_txt").className = null;
+    document.getElementById("header__mapa_txt").className = null;
+    document.getElementById("header__mapaEstaciones_txt").className = "text-menu-selected";
+
+    document.getElementById("header__mi_dispositivo-sub").className = null;
+    document.getElementById("header__contactanos-sub").className = null;
+    document.getElementById("header__mapa-sub").className = null;
+    document.getElementById("header__mapaEstaciones-sub").className = "header__menu-selected";
+
+    sec_mi_dispositivo.style.display="none";
+    sec_sin_dispositivo.style.display="none";
+    sec_contactanos.style.display="none";
+    sec_mapa.style.display="none";
+    sec_mapaEstaciones.style.display="block";
+
+    sec_acerca_de.style.display="none";
+    //sec_solicitar.style.display="none";
+
+
+    footer_sin_sesion.style.marginTop="-100px";
+
+    color_fondo.style.backgroundImage = "url('assets/images/fondo2.png')";
+    color_fondo.style.backgroundColor = "none";
 
     scrollArriba();
     cerrarMenu();

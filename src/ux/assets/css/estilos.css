@@ -347,6 +347,16 @@ body{
 .pestanya_mapa{
     display: none;
 }
+.pestanya_mapaEstaciones{
+    display: none;
+}
+
+.mapaEnSi{
+
+     width: 100%;
+     height: 780px;
+     box-shadow: 5px 5px 5px #888;
+ }
 
 /********** SECCIONES **********/
 /*@@@ UNLOGED @@@*/
@@ -1481,7 +1491,8 @@ body{
     min-height: 460px;
     display: none;
 }
-
+#map { height: 700px;
+    box-shadow: 5px 5px 5px #888;}
 
 /*FORMULARIOS*/
 .contenedor__login-register{
@@ -1944,6 +1955,24 @@ body{
     height: 100%;
 }
 .ico__mapa{
+    display: none;
+    *background-image: url("../iconos/map-location-dot-solid.svg");
+    *background-size: 45%;
+    background: #60a9ff bottom no-repeat;
+    -webkit-mask-image: url("../iconos/map-location-dot-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: bottom;
+    mask-image: url("../iconos/map-location-dot-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+    -webkit-mask-size: 45%;
+    mask-size: 45%;
+    transition: all 600ms;
+    width: 20%;
+    height: 100%;
+}
+
+.ico__mapaEstaciones{
     display: none;
     *background-image: url("../iconos/map-location-dot-solid.svg");
     *background-size: 45%;

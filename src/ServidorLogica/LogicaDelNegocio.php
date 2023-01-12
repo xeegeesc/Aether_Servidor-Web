@@ -64,6 +64,45 @@ function obtenerMediciones()
 
 //------------------------------------------------------------------------------------------
 /*
+ * obtenerMediciones24Horas() es una función que obtiene las mediciones guardadas en las ultimas 24H en BBDD.
+ *
+ * @param No dispone de parametros de entrada.
+ *
+ * @returns devuelve un JSON del resultado de la busqueda (en este caso todas las mediciones de la BBDD).
+ */
+//------------------------------------------------------------------------------------------
+
+function obtenerMediciones24Horas($idSensor){
+    try{
+        $Mediciones = obtenerMediciones24HorasBBDD($idSensor);
+
+        $resultado = array();
+        $i = 0;
+        while ($fila = mysqli_fetch_array($Mediciones)) {
+            $respuesta = [];
+
+            $respuesta["idMedicion"] = $fila["idMedicion"];
+            $respuesta["idSensor"] = $fila ["idSensor"];
+            $respuesta["valorMedicion"] = $fila ["valorMedicion"];
+            $respuesta["momentoMedicion"] = $fila ["momentoMedicion"];
+            $respuesta["latitud"] = $fila ["latitud"];
+            $respuesta["longitud"] = $fila ["longitud"];
+
+            $resultado[$i] = $respuesta;
+            $i++;
+
+        }
+        $json = json_encode($resultado);
+        $json = str_replace("[", "",  $json);
+        $json = str_replace("]", "",  $json);
+        //echo $json;
+        return $json;
+    }catch (mysqli_sql_exception $exception){
+        return $exception;
+    }
+}
+//------------------------------------------------------------------------------------------
+/*
  * obtenerUltimaMedicion() es una función obtiene la ultima medicion guardada en la BBDD.
  *
  * @param no tiene parametros de entrada.
@@ -95,7 +134,28 @@ function obtenerUltimaMedicion()
 
 }//obtenerUltimaMedicion
 
-
+//------------------------------------------------------------------------------------------
+/*
+ * cualMiSensor() es una función obtiene el sensor de un usuario en la BBDD.
+ *
+ * @param El parámetro de entrada es el correo del usuario.
+ *
+ * @returns devuelve la ID del sensor del usuario.
+ */
+//------------------------------------------------------------------------------------------
+function cualMiSensor($correo){
+    try{
+        $idSensor = cualMiSensorBBDD($correo);
+        $respuesta = 0;
+        while ($fila = mysqli_fetch_array($idSensor)) {
+            $respuesta = $fila["idSensor"];
+        }
+        //echo json_encode($respuesta);
+        return json_encode($respuesta);
+    }catch (mysqli_sql_exception $exception){
+        return $exception;
+    }
+}
 //------------------------------------------------------------------------------------------
 /*
  * registrarUsuario() es una función que crea un usuario en la BBDD guardando el nombre, el correo y su contraseña.
@@ -276,7 +336,7 @@ function obtenerDatosUsuario($correo)
             $resultadoDatos = array();
             $i = 0;
             //$respuesta = 0;
-            echo "pasa el if!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
 
             while ($fila = mysqli_fetch_array($datosUsuario)) {
                 $respuesta["nombre"] = $fila["nombre"];
@@ -285,7 +345,6 @@ function obtenerDatosUsuario($correo)
 
                 $resultadoDatos[$i] = $respuesta;
                 $i++;
-                echo "pasa el bucle";
             }
 
             return json_encode($respuesta);

@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <?php include("Servidor/solicitarDatos.php"); ?>
+    <?php include("../ServidorLogica/solicitarDatos.php"); ?>
 
     <header>
         <div class="header__contenido">

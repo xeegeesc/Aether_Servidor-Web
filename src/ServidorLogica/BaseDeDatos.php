@@ -42,7 +42,28 @@ function obtenerMedicionesBBDD(){
 
 }//obtenerMedicionesBBDD
 
+//------------------------------------------------------------------------------------------
+/*
+ * obtenerMediciones24HorasBBDD() es una función que obtiene todas las mediciones guardadas en BBDD.
+ *
+ * @param No dispone de parametros de entrada.
+ *
+ * @returns devuelve un mysqli_query del resultado de la busqueda (en este caso todas las mediciones de la BBDD).
+ */
+//------------------------------------------------------------------------------------------
 
+function obtenerMediciones24HorasBBDD($idSensor){
+    $milliseconds = floor(microtime(true) * 1000);
+    //obtenemos lo que necesitamos de la tabla medida
+    $sql = "SELECT * FROM `medida2`  WHERE `momentoMedicion` > ($milliseconds-86400000) AND `idSensor`='$idSensor'";
+    return mysqli_query(Conectar(),$sql);
+}//obtenerMediciones24Horas()
+
+function cualMiSensorBBDD($correo){
+    $sql = "SELECT * FROM `sensor`  WHERE `idUsuario` = '$correo'";
+
+    return mysqli_query(Conectar(),$sql);
+}
 //------------------------------------------------------------------------------------------
 /*
  * obtenerUltimaMedicionBBDD() es una función obtiene la ultima medicion guardada en la BBDD.
@@ -70,7 +91,7 @@ function obtenerUltimaMedicionBBDD(){
  */
 //------------------------------------------------------------------------------------------
 function solicitarDatosBBDD(){
-    $sql= 'SELECT * FROM medida2';
+    $sql= 'SELECT * FROM medida';
     return mysqli_query(Conectar(),$sql);
 }
 //------------------------------------------------------------------------------------------

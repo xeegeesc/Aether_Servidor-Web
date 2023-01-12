@@ -1,5 +1,6 @@
 <?php
 include './LogicaDelNegocio.php';
+session_start();
 
 
 $metodo = $_SERVER['REQUEST_METHOD'];
@@ -17,6 +18,10 @@ if($metodo=='POST') {
             session_start();
             $_SESSION['usuario'] = $correo;
             header("location: ../ux/bienvenida.php");
+            exit();
+        }else{
+            echo "Error en la peticion";
+            header("location: ../ux/index.php");
             exit();
         }
     } else {
