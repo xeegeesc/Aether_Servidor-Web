@@ -45,7 +45,7 @@ document.getElementById("logo_main_unloged").addEventListener("click", seccionIn
 document.getElementById("header__inicio_txt").addEventListener("click", seccionInicio);
 document.getElementById("header__quienes_txt").addEventListener("click", seccionQuienesSomos);
 document.getElementById("header__mapa_txt").addEventListener("click", seccionMapa);
-document.getElementById("header__mapaEstaciones_txt").addEventListener("click", seccionMapaEstaciones);
+//document.getElementById("header__mapaEstaciones_txt").addEventListener("click", seccionMapaEstaciones);
 
 document.getElementById("footer__unlog_quienes").addEventListener("click", seccionQuienesSomos);
 document.getElementById("acerca_de_unloged").addEventListener("click", seccionAcercaDe);
@@ -58,10 +58,10 @@ document.getElementById("btn__pasos_solicitar").addEventListener("click", seccio
 var sec_inicio = document.querySelector(".pestanya__Inicio");
 var sec_quienes_somos = document.querySelector(".pestanya_quienes-somos");
 var sec_mapa = document.querySelector(".pestanya_mapa");
-var sec_mapaEstaciones = document.querySelector(".pestanya_mapaEstaciones");
+//var sec_mapaEstaciones = document.querySelector(".pestanya_mapaEstaciones");
 var sec_acerca_de = document.querySelector(".pestanya_acerca_de");
 var sec_solicitar = document.querySelector(".pestanya__solicitar_dispositivo");
-
+var form_login = document.querySelector("#formulario_login");
 
 
 
@@ -174,10 +174,14 @@ function identificarseCerrar(){
 function entrarUsuario(){
     form_log_user.style.display="block";
     form_log_admin.style.display="none";
+    form_login.action="../ServidorLogica/comprobarCredenciales.php";
+    form_login.method="post";
 }
 function entrarAdmin(){
     form_log_user.style.display="none";
     form_log_admin.style.display="block";
+    form_login.action="";
+    form_login.method="";
 }
 
 
@@ -187,17 +191,17 @@ function seccionInicio(){
     document.getElementById("header__inicio_txt").className = "text-menu-selected";
     document.getElementById("header__quienes_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
-    document.getElementById("header__mapaEstaciones_txt").className = null;
+    //document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__inicio-sub").className = "header__menu-selected";
     document.getElementById("header__quienes-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
-    document.getElementById("header__mapaEstaciones-sub").className = null;
+    //document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_inicio.style.display="block";
     sec_quienes_somos.style.display="none";
     sec_mapa.style.display="none";
-    sec_mapaEstaciones.style.display="none";
+    //sec_mapaEstaciones.style.display="none";
 
     sec_acerca_de.style.display="none";
     sec_solicitar.style.display="none";
@@ -219,17 +223,17 @@ function seccionQuienesSomos(){
     document.getElementById("header__inicio_txt").className = null;
     document.getElementById("header__quienes_txt").className = "text-menu-selected";
     document.getElementById("header__mapa_txt").className = null;
-    document.getElementById("header__mapaEstaciones_txt").className = null;
+    //document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__inicio-sub").className = null;
     document.getElementById("header__quienes-sub").className = "header__menu-selected";
     document.getElementById("header__mapa-sub").className = null;
-    document.getElementById("header__mapaEstaciones-sub").className = null;
+    //document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_inicio.style.display="none";
     sec_quienes_somos.style.display="block";
     sec_mapa.style.display="none";
-    sec_mapaEstaciones.style.display="none";
+    //sec_mapaEstaciones.style.display="none";
 
     sec_acerca_de.style.display="none";
     sec_solicitar.style.display="none";
@@ -251,17 +255,17 @@ function seccionMapa(){
     document.getElementById("header__inicio_txt").className = null;
     document.getElementById("header__quienes_txt").className = null;
     document.getElementById("header__mapa_txt").className = "text-menu-selected";
-    document.getElementById("header__mapaEstaciones_txt").className = null;
+    //document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__inicio-sub").className = null;
     document.getElementById("header__quienes-sub").className = null;
     document.getElementById("header__mapa-sub").className = "header__menu-selected";
-    document.getElementById("header__mapaEstaciones-sub").className = null;
+    //document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_inicio.style.display="none";
     sec_quienes_somos.style.display="none";
     sec_mapa.style.display="block";
-    sec_mapaEstaciones.style.display="none";
+    // sec_mapaEstaciones.style.display="none";
 
     sec_acerca_de.style.display="none";
     sec_solicitar.style.display="none";
@@ -283,19 +287,19 @@ function seccionAcercaDe(){
     document.getElementById("header__inicio_txt").className = null;
     document.getElementById("header__quienes_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
-    document.getElementById("header__mapaEstaciones_txt").className = null;
+    //document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__inicio-sub").className = null;
     document.getElementById("header__quienes-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
-    document.getElementById("header__mapaEstaciones-sub").className = null;
+    // document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_inicio.style.display="none";
     sec_quienes_somos.style.display="none";
     sec_mapa.style.display="none";
     sec_acerca_de.style.display="flex";
     sec_solicitar.style.display="none";
-    sec_mapaEstaciones.style.display="none";
+    //sec_mapaEstaciones.style.display="none";
 
 
     footer_sin_sesion.style.marginTop="100px";
@@ -313,19 +317,19 @@ function seccionSolicitarDispositivo(){
     document.getElementById("header__inicio_txt").className = null;
     document.getElementById("header__quienes_txt").className = null;
     document.getElementById("header__mapa_txt").className = null;
-    document.getElementById("header__mapaEstaciones_txt").className = null;
+    //document.getElementById("header__mapaEstaciones_txt").className = null;
 
     document.getElementById("header__inicio-sub").className = null;
     document.getElementById("header__quienes-sub").className = null;
     document.getElementById("header__mapa-sub").className = null;
-    document.getElementById("header__mapaEstaciones-sub").className = null;
+    //document.getElementById("header__mapaEstaciones-sub").className = null;
 
     sec_inicio.style.display="none";
     sec_quienes_somos.style.display="none";
     sec_mapa.style.display="none";
     sec_acerca_de.style.display="none";
     sec_solicitar.style.display="flex";
-    sec_mapaEstaciones.style.display="none";
+    //sec_mapaEstaciones.style.display="none";
 
 
     footer_sin_sesion.style.marginTop="100px";

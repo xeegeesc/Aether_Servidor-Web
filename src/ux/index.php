@@ -299,7 +299,7 @@
                 <div class="contenedor__login-register">
 
                     <!-- Login -->
-                    <form action="../ServidorLogica/comprobarCredenciales.php" method="post" class="formulario__login">
+                    <form id="formulario_login" action="../ServidorLogica/comprobarCredenciales.php" method="post" class="formulario__login">
 
                         <div id="loggin_user_form">
                             <h2>Iniciar Sesión</h2>
