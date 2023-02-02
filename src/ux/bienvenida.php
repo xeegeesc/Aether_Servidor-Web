@@ -445,10 +445,10 @@
             <div id="map"></div>
 
           <script>
-            fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/cualMiSensor.php?correo="+"<?php echo $correoUsuario ?>").then(function(response) {
+            fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/cualMiSensor.php?correo="+"<?php echo $correoUsuario?>", { mode: 'no-cors'}).then(function(response) {
   return response.json();
 }).then(function(idSensor) {
-    fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/mediciones24Horas.php?idSensor="+idSensor).then(function(response) {
+    fetch("http://localhost:8080/AetherBackend/Aether_Servidor-Web/src/ServidorLogica/mediciones24Horas.php?idSensor="+idSensor, { mode: 'no-cors'}).then(function(response) {
   return response.json();
 }).then(function(medicionesJson) {
   var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
