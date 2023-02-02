@@ -1,3 +1,6 @@
+html,body{
+    scroll-behavior: smooth
+}
 body{
     background-image: none;
     background-color: #e0e5ea;
@@ -154,8 +157,20 @@ main{
 }
 
 
-
-
+#backToTop{
+    background-color: rgba(1, 24, 47, 0.23);
+    position: fixed;
+    right: 50px;
+    bottom: 60px;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    transition: all 400ms;
+    display: none;
+}
+#backToTop:hover{
+    background-color: #01182f;
+}
 
 
 @media screen and (max-width: 500px) {

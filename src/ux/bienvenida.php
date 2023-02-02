@@ -1,7 +1,7 @@
 <?php
 
      session_start();
-     
+     /*
     if (!isset($_SESSION['usuario'])){
         echo '
             <script>
@@ -12,6 +12,7 @@
         session_destroy();
         die();
     }
+     */
 ?>
 
 <!DOCTYPE html>
@@ -285,7 +286,7 @@
                             <div class="bg_V2"></div>
                             <div class="body__card_front_V2">
                                 <div id="mi_dispositivo_i5" class="ico__cinfoV3"></div>
-                                <h1>Tu media de calidad del aire</h1>
+                                <h1>Tu media de calidad del aire últimas 24h</h1>
                                 <div class="gauge">
                                     <div class="gauge__body">
                                         <div class="gauge__fill"></div>
@@ -293,8 +294,11 @@
                                     </div>
                                 </div>
                                 <div class="sub_gauge">
-                                    <p>Muy mala</p>
-                                    <p style="margin-left: auto">Muy buena</p>
+                                    <p id="gauge-down">Muy mala</p>
+                                    <p id="gauge-up" style="margin-left: auto">Muy buena</p>
+                                </div>
+                                <div class="gauge_result">
+                                    <p id="gauge_result_txt"></p>
                                 </div>
 
                             </div>
@@ -302,7 +306,7 @@
                         <div class="card__back_V2">
                             <div class="body__card_back_V2">
                                 <div id="mi_dispositivo_x5" class="ico__cxV3"></div>
-                                <p>Media de las medidas de las últimas 24 horas.</p>
+                                <p>Media de las medidas de las últimas 24 horas segun los estandares de calidad del aire la organización mundial de la salud y los estandares europeos. <br>Se basa en la cantidad de ppt de ozono permitido en el aire, siendo muy mala una cantidad de ppt considerada peligrosa para la salud según la normativa europea y, muy buena, una calidad de aire completamente libre de gases nocivos perjudiciales para la salud. </p>
                             </div>
                         </div>
                     </div>

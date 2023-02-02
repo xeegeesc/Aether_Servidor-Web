@@ -1920,6 +1920,25 @@ body{
     margin-right: 15px;
 }
 
+.ico__go_to_top{
+    *background-image: url("../iconos/arrow-up-solid.svg");
+    *background-size: 90%;
+    background: #4384c9 center no-repeat;
+    -webkit-mask-image: url("../iconos/arrow-up-solid.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("../iconos/arrow-up-solid.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    transition: all 100ms;
+    width: 30px;
+    height: 30px;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+
 .ico__home{
     display: none;
     *background-image: url("../iconos/house-solid.svg");
@@ -2916,6 +2935,16 @@ footer:hover{
     color: #032a52;
     padding: 5px;
     border-radius: 5px;
+}
+
+.gauge_result{
+    margin-top: 15px;
+}
+#gauge_result_txt{
+    padding: 10px 30px;
+    background-color: #ffab00;
+    border-radius: 15%;
+    font-size: 25px;
 }
 
 /*RESPONSIVE DESIGN*/

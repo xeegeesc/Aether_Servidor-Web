@@ -1,5 +1,8 @@
 document.getElementById("btn__cerrar_admin").addEventListener("click", logoutAdmin);
 
+document.getElementById("backToTop").addEventListener("click", scrollToTop);
+
+
 document.getElementById("ico__orden_value").addEventListener("click", ordenValue);
 document.getElementById("ico__orden_estado").addEventListener("click", ordenEstado);
 document.getElementById("ico__orden_fecha").addEventListener("click", ordenFecha);
@@ -201,3 +204,21 @@ function ordenValue() {
         tab_eup.style.display = "none";
     }
 }
+
+function scrollToTop(){
+    window.scrollTo(0, 0);
+}
+
+
+window.onscroll = function(){scrollVisibility()}
+
+
+function scrollVisibility(){
+
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('backToTop').style.display = "block";
+    } else {
+        document.getElementById('backToTop').style.display = "none";
+    }
+};

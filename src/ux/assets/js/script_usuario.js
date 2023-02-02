@@ -55,11 +55,13 @@ var popup_editar = document.querySelector("#popup__editar");
 var username = document.getElementById("inp_edit_nombre").value;
 
 
+document.getElementById("gauge-down").addEventListener("click",gaugeDown);
+document.getElementById("gauge-up").addEventListener("click",gaugeUp);
+
 
 document.getElementById("header__contactanos_txt").addEventListener("click", seccionContactanos);
 document.getElementById("header__mapa_txt").addEventListener("click", seccionMapa);
 document.getElementById("header__mapaEstaciones_txt").addEventListener("click", seccionMapaEstaciones);
-
 document.getElementById("footer__log_contacta").addEventListener("click", seccionContactanos);
 document.getElementById("footer__log_mapa").addEventListener("click", seccionMapa);
 
@@ -68,7 +70,6 @@ var sec_sin_dispositivo = document.querySelector(".pestanya__sin_mi_dispositivo"
 var sec_contactanos = document.querySelector(".pestanya_contactanos");
 var sec_mapa = document.querySelector(".pestanya_mapa");
 var sec_mapaEstaciones = document.querySelector(".pestanya_mapaEstaciones");
-
 var sec_acerca_de = document.querySelector(".pestanya_acerca_de");
 
 /*========== Footer ==========*/
@@ -371,9 +372,61 @@ function setGaugeValue(gauge, value) {
     gauge.querySelector(".gauge__cover").textContent = `${Math.round(
         value * 100
     )}%`;
+
+    if (value<0.15){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#ff4400";
+        document.getElementById("gauge_result_txt").innerHTML = "Muy mala";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#ff4400";
+
+    }else if (0.15<=value && value<0.30){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#ffb700";
+        document.getElementById("gauge_result_txt").innerHTML = "Mala";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#ffb700";
+
+    }else if (0.30<=value && value<0.45){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#f7ff00";
+        document.getElementById("gauge_result_txt").innerHTML = "Algo mala";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#f7ff00";
+
+    }else if (0.45<=value && value<0.60){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#c2ff48";
+        document.getElementById("gauge_result_txt").innerHTML = "Aceptable";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#c2ff48";
+
+    }else if (0.60<=value && value<0.80){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#a2ff00";
+        document.getElementById("gauge_result_txt").innerHTML = "Buena";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#a2ff00";
+
+    }else if (0.80<=value && value<=1){
+        gauge.querySelector(".gauge__fill").style.backgroundColor = "#40ff00";
+        document.getElementById("gauge_result_txt").innerHTML = "Muy buena";
+        document.getElementById("gauge_result_txt").style.backgroundColor = "#40ff00";
+    }
 }
 
-setGaugeValue(gaugeElement, 0.42);
+function gaugeDown() {
+    if (gv>=0.05){
+        gv-=0.05;
+        setGaugeValue(gaugeElement, gv);
+    }
+    else if(gv<0.05 && gv>0){
+        gv=0;
+        setGaugeValue(gaugeElement, gv);
+    }
+}
+function gaugeUp(){
+    if (gv<=0.95) {
+        gv += 0.05;
+        setGaugeValue(gaugeElement, gv);
+    }
+    else if(gv>0.95 && gv<1){
+        gv=1;
+        setGaugeValue(gaugeElement, gv);
+    }
+}
+var gv=0.15;//este es el valor de la grafica circular
+setGaugeValue(gaugeElement, gv);
 
 function update_open_close(){
     if (open_close>0){

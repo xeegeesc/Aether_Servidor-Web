@@ -149,6 +149,10 @@
 
     </main>
 
+    <div id="backToTop">
+        <div class="ico__go_to_top"></div>
+    </div>
+
 <script src="assets/js/script_admin.js"></script>
 </body>
 </html>
